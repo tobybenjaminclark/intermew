@@ -1,9 +1,11 @@
 import json
+import threading
 from boogle_python.cv_client import GMS2Client
 from boogle_python.streams.test_stream import TestStream
 from boogle_python.streams.camera_stream import CameraStream
 from boogle_python.streams.emotion_stream import EmotionStream
 from boogle_python.streams.speech_recognition_stream import SpeechRecognitionStream
+from boogle_python.misc.prompt_generator import PromptGenerator
 
 from queue import Queue
 import cv2
@@ -14,9 +16,13 @@ class Controller:
         self.client_replies_queue = Queue()
         self.stream_instances = {}  # Store stream instances and their queues
         self.running = True
-
-        self.create_client()
+        self.datafiles_location = "game/datafiles/"
+        
         self.initialize_streams()
+        self.create_client()
+        
+
+        self.prompt_generator_instance = PromptGenerator(self.client_queue)
         
     def create_client(self) -> None:
         """Creates a thread which initializes the client."""
@@ -26,7 +32,6 @@ class Controller:
 
     def initialize_streams(self) -> None:
         """Initializes the test and camera streams."""
-        self.create_stream('test_stream', TestStream)
         self.create_stream('camera_stream', CameraStream)
         self.create_stream('emotion_stream', EmotionStream)
         self.create_stream('speech_recognition_stream', SpeechRecognitionStream)
@@ -59,12 +64,7 @@ class Controller:
 
     def update_client(self) -> None:
         """Attempt to update the client. Handle keyboard interrupt exceptions."""
-        try:
-            self.try_transmit_to_client()
-        except KeyboardInterrupt:
-            self.terminate_program()
-        except Exception as e:
-            raise e
+        self.try_transmit_to_client()
     
     def terminate_program(self) -> None:
         """Safely end all threads and terminate the main process."""
@@ -102,6 +102,20 @@ class Controller:
     def handle_client_replies(self, replies_dict) -> None:
         """Handles replies from the client and manages thread states."""
 
+        if "action" in replies_dict:
+            match replies_dict["action"]:
+                case "start_interview":
+                    file_name = replies_dict["job_chosen"]
+                    file_location = self.datafiles_location + file_name
+                    thread = threading.Thread(target = self.prompt_generator_instance.start_interview, args = (file_location,))
+                    thread.start()
+                case "input":
+                    user_reply = replies_dict["message_data"]
+                    self.stream_instances["speech_recognition_stream"]["instance"].buffer = ""
+                    thread = threading.Thread(target = self.prompt_generator_instance.generate_prompt, args = (user_reply,))
+                    thread.start()
+
+
 
         if "from" in replies_dict:
             stream_name = replies_dict["from"]  # Extract stream name
@@ -109,8 +123,11 @@ class Controller:
                 stream_instance = self.stream_instances[stream_name]['instance']
                 match replies_dict["status"]:
                     case "create":
-                        stream_instance.start_thread()  # Call start_thread on the instance
+                        if not stream_instance.exists:
+                            stream_instance.start_thread()  # Call start_thread on the instance
                     case "destroy":
-                        stream_instance.stop_thread()  # Call stop_thread on the instance
+                        if stream_instance.exists:
+                            stream_instance.stop_thread()  # Call stop_thread on the instance
+
 
 

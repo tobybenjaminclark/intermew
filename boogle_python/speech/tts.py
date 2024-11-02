@@ -4,10 +4,11 @@ import os
 from openai import OpenAI
 from pydub import AudioSegment
 from pydub.playback import play
+import json
 
 
 class TTS():
-    def __init__(self):
+    def __init__(self, queue):
         
 
         self.speech_file_path = "speech.mp3"
@@ -16,6 +17,8 @@ class TTS():
             key = file.read().strip()
 
         self.client = OpenAI(api_key=key)
+
+        self.queue = queue
 
     def speak(self, text):
 
@@ -31,6 +34,8 @@ class TTS():
 
         # Play the MP3 file
         play(speech)
+
+        self.queue.put(json.dumps({"from": "speech_recognition_stream", "action": "done"}))
 
 
 

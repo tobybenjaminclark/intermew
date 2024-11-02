@@ -77,6 +77,6 @@ class CameraStream():
 
             self.send_data(image_json)
             self.new_data = False
-            time.sleep(0.2)
+            time.sleep(0.1)
             
     

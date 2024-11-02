@@ -4,6 +4,7 @@ import threading
 from queue import Queue
 import json
 import shutil
+import re
 
 
 class GMS2Client():
@@ -97,6 +98,7 @@ class GMS2Client():
 
         print(f"conn: {conn}")
         conn.settimeout(0.1)  # Set a small timeout to avoid blocking on recv
+        
         while not stop_event.is_set():
             # Send messages if any are queued
             if not self.client_queue.empty():
@@ -109,25 +111,20 @@ class GMS2Client():
                 if incoming_data:
                     # Decode the incoming data as latin1
                     decoded_data = incoming_data.decode('latin1')
-                    try:
-                        # Find the start of the JSON
-                        json_start = decoded_data.find('{')
-                        # Find the last closing brace
-                        json_end = decoded_data.rfind('}') + 1
-
-                        if json_start != -1 and json_end != -1 and json_end > json_start:
-                            # Extract the JSON portion of the data
-                            json_data = decoded_data[json_start:json_end]
-
-                            # Attempt to load the JSON data
-                            parsed_json = json.loads(json_data)
-
-                            self.handle_reply(parsed_json)
-                            
-                    except json.JSONDecodeError as e:
-                        print(f"Error decoding JSON: {e}")
-                        os._exit(0)
                     
+                    # Find all JSON objects in the decoded data using regular expressions
+                    json_strings = re.findall(r'\{.*?\}', decoded_data)
+                    
+                    for json_str in json_strings:
+                        try:
+                            # Parse each JSON string
+                            parsed_json = json.loads(json_str)
+                            self.handle_reply(parsed_json)
+                        
+                        except json.JSONDecodeError as e:
+                            print(f"Error decoding JSON: {e}")
+                            os._exit(0)
+                        
             except socket.timeout:
                 # Timeout happens when no data is received, we just continue the loop
                 pass
@@ -135,7 +132,7 @@ class GMS2Client():
             except Exception as e:
                 print(f"socket exception: {e}")
                 os._exit(0)
-            
+        
         return None
     
     def handle_reply(self, parsed_json:dict[str,any]) -> None:
