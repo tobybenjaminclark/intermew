@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oPreInterview",
+  "%Name":"oInterview",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPreInterview",
+  "name":"oInterview",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprPreInterview",
-    "path":"sprites/sprPreInterview/sprPreInterview.yy",
+    "name":"sprInterview",
+    "path":"sprites/sprInterview/sprInterview.yy",
   },
   "spriteMaskId":null,
   "visible":true,
