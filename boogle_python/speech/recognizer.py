@@ -1,12 +1,19 @@
 from RealtimeSTT import AudioToTextRecorder
-import pyautogui
 
-def process_text(text):
-    print(text)
+class SpeechRecognition:
 
+    def __init__(self):
+        self.recorder = AudioToTextRecorder()
+
+    
+
+    def print_text(self, text):
+        print(text)
+
+    def process_text(self):
+        while 1:
+            self.recorder.text(self.print_text)
+        
 if __name__ == '__main__':
-    print("Wait until it says 'speak now'")
-    recorder = AudioToTextRecorder()
-
-    while True:
-        recorder.text(process_text)
+    sr = SpeechRecognition()
+    sr.process_text()

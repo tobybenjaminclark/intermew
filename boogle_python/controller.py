@@ -3,6 +3,8 @@ from boogle_python.cv_client import GMS2Client
 from boogle_python.streams.test_stream import TestStream
 from boogle_python.streams.camera_stream import CameraStream
 from boogle_python.streams.emotion_stream import EmotionStream
+from boogle_python.streams.speech_recognition_stream import SpeechRecognitionStream
+
 from queue import Queue
 import cv2
 import pandas as pd
@@ -27,6 +29,7 @@ class Controller:
         self.create_stream('test_stream', TestStream)
         self.create_stream('camera_stream', CameraStream)
         self.create_stream('emotion_stream', EmotionStream)
+        self.create_stream('speech_recognition_stream', SpeechRecognitionStream)
 
     def create_stream(self, name: str, stream_class) -> None:
         """Generic method to create a stream instance."""
@@ -91,7 +94,7 @@ class Controller:
         # RECEIVE
         if not self.client_replies_queue.empty():
             replies_dict = self.client_replies_queue.get()
-            print(f"replies: {replies_dict}")
+            print(f"replies: {repr(replies_dict)}")
             self.handle_client_replies(replies_dict)
             return True
         return False
@@ -99,20 +102,9 @@ class Controller:
     def handle_client_replies(self, replies_dict) -> None:
         """Handles replies from the client and manages thread states."""
 
-        if "action" in replies_dict:
-            match replies_dict["action"]:
-                case "start_interview":
-                    # start emotion
-                    stream_instance = self.stream_instances["emotion_stream"]['instance']
-                    stream_instance.start_thread()
-                case "stop_interview":
-                    self.stop_all_streams()
-                    aggregate_emotion_data = self.stream_instances["emotion_stream"]["instance"].get_interview_data()
-
 
         if "from" in replies_dict:
             stream_name = replies_dict["from"]  # Extract stream name
-            print(f"stream instances: {self.stream_instances}")
             if stream_name in self.stream_instances:
                 stream_instance = self.stream_instances[stream_name]['instance']
                 match replies_dict["status"]:
