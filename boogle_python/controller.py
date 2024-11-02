@@ -115,7 +115,6 @@ class Controller:
 
         if "from" in replies_dict:
             stream_name = replies_dict["from"]  # Extract stream name
-            print(f"stream instances: {self.stream_instances}")
             if stream_name in self.stream_instances:
                 stream_instance = self.stream_instances[stream_name]['instance']
                 match replies_dict["status"]:

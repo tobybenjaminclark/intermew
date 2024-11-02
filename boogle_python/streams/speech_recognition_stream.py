@@ -29,12 +29,14 @@ class SpeechRecognitionStream():
         
     def create_thread(self) -> threading.Thread:
         
+        self.buffer = ""
         self.exists = True
         # ',' used in thread args to convert the single argument to a tuple.
         self.thread: threading.Thread
         self.thread = threading.Thread(
             target=self.begin_retrieval, args=(self.stop_event,)
         )
+        
         self.thread.start()
 
 
@@ -55,8 +57,9 @@ class SpeechRecognitionStream():
         
 
     def process_text(self, text):
+        self.buffer += text
         try:
-            data = json.dumps({"from": "speech_recognition_stream", "message_data": text})
+            data = json.dumps({"from": "speech_recognition_stream", "message_data": self.buffer})
             self.send_queue.put(data)
         except Exception as e:
             print(e)
