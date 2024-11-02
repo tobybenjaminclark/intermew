@@ -169,9 +169,9 @@ class EmotionStream():
             # Store the averages in the results dictionary
             averages[f'portion_{i + 1}'] = avg_values
 
-        print(averages)
-
-        return averages
+        data = {"from": "emotion_stream",
+                        "aggregate_data": averages}
+        self.send_queue.put(data)
 
 
 
