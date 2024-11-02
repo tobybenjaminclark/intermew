@@ -1,8 +1,8 @@
 import json
 from boogle_python.cv_client import GMS2Client
-from boogle_python.test_stream import TestStream
-from boogle_python.camera_stream import CameraStream
-from boogle_python.emotion_stream import EmotionStream
+from boogle_python.streams.test_stream import TestStream
+from boogle_python.streams.camera_stream import CameraStream
+from boogle_python.streams.emotion_stream import EmotionStream
 from queue import Queue
 import cv2
 

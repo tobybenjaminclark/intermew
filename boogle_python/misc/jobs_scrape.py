@@ -35,15 +35,18 @@ class JobsScraper():
         interviews = [
             {
                 "name": "Preliminary Round",
-                "type": "Technical"
+                "type": "Technical",
+                "score": 0
             },
             {
                 "name": "Personal",
-                "type": "HR"
+                "type": "HR",
+                "score": 0,
             },
             {
                 "name": "Technical Interview",
-                "type": "Managerial"
+                "type": "Managerial",
+                "score": 0,
             }
         ]
         
