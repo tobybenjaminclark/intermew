@@ -1,27 +1,12 @@
-import speech_recognition as sr
+from RealtimeSTT import AudioToTextRecorder
+import pyautogui
 
-class SpeechRecognizer:
+def process_text(text):
+    print(text)
 
-    def __init__(self):
-        self.recognizer = sr.Recognizer()
+if __name__ == '__main__':
+    print("Wait until it says 'speak now'")
+    recorder = AudioToTextRecorder()
 
-    def recognize_speech(self):
-        
-        with sr.Microphone() as source:
-            print("Listening...")
-            audio = self.recognizer.listen(source)
-
-        try:
-            text = self.recognizer.recognize_google(audio)
-            print(f"You said: {text}")
-            return text
-        except sr.UnknownValueError:
-            print("Sorry, I could not understand the audio.")
-            return None
-        except sr.RequestError:
-            print("Could not request results from Google Speech Recognition service.")
-            return None
-
-if __name__ == "__main__":
-    speech = SpeechRecognizer()
-    user_response = speech.recognize_speech()
+    while True:
+        recorder.text(process_text)
