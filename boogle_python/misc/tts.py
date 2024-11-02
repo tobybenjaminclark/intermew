@@ -1,6 +1,9 @@
 
-from pathlib import Path
+
+import os
 from openai import OpenAI
+from pydub import AudioSegment
+from pydub.playback import play
 
 
 class TTS():
@@ -15,12 +18,21 @@ class TTS():
         self.client = OpenAI(api_key=key)
 
     def speak(self, text):
+
         with self.client.audio.speech.with_streaming_response.create(
             model="tts-1",
             voice="alloy",
             input=text,
         ) as response:
             response.stream_to_file(self.speech_file_path)
+
+        # Load the MP3 file
+        speech = AudioSegment.from_mp3(self.speech_file_path)
+
+        # Play the MP3 file
+        play(speech)
+
+
 
         
 
