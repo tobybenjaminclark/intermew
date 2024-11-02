@@ -10,10 +10,14 @@ draw_set_alpha(1 - fade_ratio);
 
 
 
+draw_set_font(fntJobHeading);
+draw_outlined_text(x, y - 40, _company);
+
 draw_set_font(fntHeading);
-draw_text(x, y - 20, _company);
-draw_set_font(-1)
 draw_text(x, y + 10, _role);
-draw_text(x, y + 30, "Click to Practice");
+
+draw_set_font(-1)
+
+draw_text(x, y + 40, "Click to Practice");
 
 draw_set_alpha(1);

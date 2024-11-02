@@ -19,9 +19,8 @@ with(oCamera){
 	part_type_destroy(_ptype2)
 	part_type_destroy(_ptype3)
 	part_emitter_clear(_ps, _pemit1)
+	part_emitter_clear(_ps, _pemit2)
 	part_emitter_clear(_ps, _pemit3)
-	part_emitter_clear(_ps, _pemit3)
-	part_system_position(_ps, - 1000, -1000);
 	instance_destroy(id);
 }
 

@@ -26,14 +26,9 @@ if(n_id == server_socket)
 		// Asynchronous Networking Event
 		if variable_struct_exists(jsonData, "from") {
 			
-			if jsonData.from == "test_stream" {
-				show_debug_message(string(jsonData))
-			}
 		    if jsonData.from == "camera_stream" {
-		        show_debug_message("Received from camera thread");
 				
 				if variable_struct_exists(jsonData, "image_data") and variable_struct_exists(jsonData, "format") {
-					show_debug_message("reached here")
 					
 					var base64_data = jsonData.image_data;
 					var format = jsonData.format;
@@ -48,12 +43,6 @@ if(n_id == server_socket)
 			        // Load image as sprite
 			        global.received_sprite = sprite_add(temp_file, 0, 0, 0, 0, 0);
 
-			        if (global.received_sprite == -1) {
-			            show_debug_message("Failed to load sprite");
-			        } else {
-			            show_debug_message("Sprite loaded successfully");
-			        }
-
 			        // Clean up
 			        buffer_delete(decoded_buffer);
 			        json_destroy(jsonData);
@@ -61,7 +50,40 @@ if(n_id == server_socket)
 
 
 		    }
-		}
+			}
+			if jsonData.from == "emotion_stream" {
+				if variable_struct_exists(jsonData, "dominant_emotion") {
+					var msg = jsonData.dominant_emotion;
+					show_debug_message("dominant emotion: " + string(msg));
+					
+				}
+			}
+			if jsonData.from == "speech_recognition_stream" {
+				
+				if variable_struct_exists(jsonData, "message_data") {
+					var msg = jsonData.message_data;
+					global.user_message = msg;
+					show_debug_message("user has said: " + string(msg))
+					
+				}
+				
+				if variable_struct_exists(jsonData, "action") {
+					if jsonData.action == "done" {
+						global.who_is_speaking = "user is speaking";
+						instance_create_layer(room_width div 3, room_height div 3, "Foreground", oVoiceController, {});
+					}
+				}
+				
+			}
+			if jsonData.from == "interviewer" {
+				if variable_struct_exists(jsonData, "message_data") {
+					var msg = jsonData.message_data;
+					show_debug_message("interviewer has said: " + string(msg));
+					global.interviewer_text = msg;
+					
+				}
+			}
+			
 
 
 

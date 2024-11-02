@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"server_stop_listening",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"server_stop_listening",
+  "parent":{
+    "name":"server",
+    "path":"folders/Scripts/server.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

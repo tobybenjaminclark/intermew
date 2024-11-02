@@ -17,3 +17,12 @@ draw_text(100, room_height - 10, interview_path);
 
 // Create Monster
 instance_create_layer(0, 0, "Instances", oMonster);
+
+if(global.who_is_speaking == "user is speaking"){
+	draw_set_color(c_lime);
+	draw_circle(x + 100, y, 50, false);
+} else {
+	draw_set_color(c_red);
+	draw_circle(x + 100, y, 50, false);
+}
+draw_set_color(c_white);

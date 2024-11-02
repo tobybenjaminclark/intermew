@@ -1,5 +1,5 @@
 // Camera properties
-spd = 3; // Speed of camera movement
+spd = 5; // Speed of camera movement
 
 //psPlayer
 _ps = part_system_create();

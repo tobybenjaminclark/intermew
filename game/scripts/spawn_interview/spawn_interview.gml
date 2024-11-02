@@ -42,11 +42,12 @@ function spawn_interview(interview_path, interview_index)
 	}
 
 	var _x = room_width div 2;
-	var _y = room_height div 2;
+	var _y = (room_height div 3) * 2;
 	var interview = interviews[interview_index];
 	instance_create_layer(_x, _y, "Instances", oPreInterview, {
 	    name: interview.name,
 	    type: interview.type,
+		description: json_data.description,
 		company: heading,
 		role: position,
 		interview_path: file_path,
@@ -54,6 +55,17 @@ function spawn_interview(interview_path, interview_index)
 	});
 	
 	with(oInterviewNav) {
+		part_particles_clear(_ps)
+		part_type_destroy(_ptype1)
+		part_emitter_clear(_ps, _pemit1)
+		
+		part_particles_clear(_ps1)
+		part_type_destroy(_ptype2)
+		part_emitter_clear(_ps1, _pemit2)
+		
+		instance_destroy(id);	
+	}
+	with(oURL) {
 		instance_destroy(self);	
 	}
 }

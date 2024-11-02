@@ -46,7 +46,7 @@ function spawn_nav_menu(file_path) {
     show_debug_message("Name: " + heading);
     show_debug_message("Position: " + position);
 	
-	instance_create_layer(room_width div 2, room_height div 5, "Instances", oJobHeader, {
+	instance_create_layer(room_width div 2, room_height div 5, "Foreground", oJobHeader, {
 		company: heading,
 		role: position
 	});
@@ -59,11 +59,15 @@ function spawn_nav_menu(file_path) {
 	var room_padding = room_width * PADDING_PERCENT;
 	var available_width = room_width - (2 * room_padding);
 	var spacing = available_width / (num_interviews - 1);
-
+	var all_passed = true;
 	for (var i = 0; i < num_interviews; i++) {
 	    var _y = (room_height div 8) * 4.5;
 	    var _x = room_padding + (spacing * i);
 	    var interview = interviews[i];
+		if(interview.score < 70){
+			all_passed = false;
+		}
+		
 	    instance_create_layer(_x, _y, "Instances", oInterviewNav, {
 	        name: interview.name,
 	        type: interview.type,
@@ -71,6 +75,13 @@ function spawn_nav_menu(file_path) {
 			interview_index: i,
 			scre: interview.score
 	    });
+	}
+	
+	if(all_passed){
+		instance_create_layer(room_width div 2,
+		room_height - 50,
+		"Foreground",
+		oURL, {_url:json_data.url});
 	}
 	
 	with(oStatVis) {
