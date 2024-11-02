@@ -6,6 +6,7 @@ import time
 import cv2
 from deepface import DeepFace
 import csv
+import pandas as pd
 
 import numpy as np
 
@@ -38,7 +39,7 @@ class EmotionStream():
 
     # Initialize the CSV file with header
     def initialize_csv(self):
-        header = ["timestamp", "angry", "disgust", "fear", "happy", "sad", "surprise", "neutral", "face_position_x", "face_position_y", "center_closeness"]
+        header = ["angry", "disgust", "fear", "happy", "sad", "surprise", "neutral", "face_position_x", "face_position_y", "center_closeness"]
         with open(self.file_path, mode="w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(header)  # Write the header only once at the start
@@ -94,12 +95,6 @@ class EmotionStream():
             # Perform emotion analysis on the face ROI
             result = DeepFace.analyze(face_roi, actions=['emotion'], enforce_detection=False)
 
-            print(f"result 0: {result[0]}")
-
-            # Determine the dominant emotion
-            print(result)
-
-            timestamp = time.time()
             anger = np.round(result[0]["emotion"]["angry"] / 100, 3)
             disgust = np.round(result[0]["emotion"]["disgust"] / 100, 3)
             fear = np.round(result[0]["emotion"]["fear"] / 100, 3)
@@ -125,13 +120,11 @@ class EmotionStream():
             # Ensure percentage is within 0 to 100
             center_closeness = max(0, min(center_closeness, 1))
 
-            print(f"\n\n\n center closeness: {center_closeness}")
-            
             dominant_emotion = result[0]["dominant_emotion"]
 
             with open(self.file_path, mode="a", newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow([timestamp, anger, disgust, fear, happiness, sadness, surprise, neutral, face_position_x, face_position_y, center_closeness])
+                writer.writerow([anger, disgust, fear, happiness, sadness, surprise, neutral, face_position_x, face_position_y, center_closeness])
 
 
             # Draw rectangle around face and label with predicted emotion
@@ -139,21 +132,40 @@ class EmotionStream():
             cv2.putText(self.frame, dominant_emotion, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
         cv2.imshow("", self.frame)
         cv2.waitKey(1)
-
-
+        
         self.new_data = False
-        try:
-            test_data = json.dumps({"from": "test_stream", "message": "test"})
-            self.send_queue.put(test_data)
-        except Exception as e:
-            print(e)
-    
+
     def begin_retrieval(self, stop_event) -> None:
 
         while not stop_event.is_set():
             self.send_data()
-            time.sleep(0.05)
-    
+            time.sleep(0.1)
+
+    def get_interview_data(self, num_portions = 50):
+
+
+        # Read the CSV file
+        data = pd.read_csv(self.file_path)
+
+        # Calculate the number of rows per portion
+        portion_size = len(data) // num_portions
+        averages = {}
+
+        for i in range(num_portions):
+            start_index = i * portion_size
+            end_index = (i + 1) * portion_size if i < num_portions - 1 else len(data)
+
+            # Calculate the average for each column in the current portion
+            portion_data = data.iloc[start_index:end_index]
+            avg_values = portion_data.mean().to_dict()
+
+            # Store the averages in the results dictionary
+            averages[f'portion_{i + 1}'] = avg_values
+
+        print(averages)
+
+        return averages
+
 
 
 if __name__ == "__main__":

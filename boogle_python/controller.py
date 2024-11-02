@@ -5,6 +5,7 @@ from boogle_python.streams.camera_stream import CameraStream
 from boogle_python.streams.emotion_stream import EmotionStream
 from queue import Queue
 import cv2
+import pandas as pd
 
 class Controller:
     def __init__(self) -> None:
@@ -65,10 +66,15 @@ class Controller:
     def terminate_program(self) -> None:
         """Safely end all threads and terminate the main process."""
         print("CTRL+C has been pressed. Ending threads.")
-        for stream_info in self.stream_instances.values():
-            stream_info['instance'].stop_thread()  # Stop the thread using the instance
+        self.stop_all_streams()
         self.client.stop_thread()
         self.running = False
+
+    def stop_all_streams(self):
+        for stream_info in self.stream_instances.values():
+            if stream_info['instance'].exists:
+                stream_info['instance'].stop_thread()  # Stop the thread using the instance
+
 
     def try_transmit_to_client(self) -> bool:
         """Handles sending and receiving messages with the client."""
@@ -92,6 +98,18 @@ class Controller:
 
     def handle_client_replies(self, replies_dict) -> None:
         """Handles replies from the client and manages thread states."""
+
+        if "action" in replies_dict:
+            match replies_dict["action"]:
+                case "start_interview":
+                    # start emotion
+                    stream_instance = self.stream_instances["emotion_stream"]['instance']
+                    stream_instance.start_thread()
+                case "stop_interview":
+                    self.stop_all_streams()
+                    aggregate_emotion_data = self.stream_instances["emotion_stream"]["instance"].get_interview_data()
+
+
         if "from" in replies_dict:
             stream_name = replies_dict["from"]  # Extract stream name
             print(f"stream instances: {self.stream_instances}")
@@ -102,3 +120,5 @@ class Controller:
                         stream_instance.start_thread()  # Call start_thread on the instance
                     case "destroy":
                         stream_instance.stop_thread()  # Call stop_thread on the instance
+
+
