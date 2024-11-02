@@ -16,5 +16,13 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"oInterviewNav","order":1,"path":"objects/oInterviewNav/oInterviewNav.yy",},
+    {"name":"oPositionNav","order":2,"path":"objects/oPositionNav/oPositionNav.yy",},
+    {"name":"rmInterviewStages","order":5,"path":"rooms/rmInterviewStages/rmInterviewStages.yy",},
+    {"name":"rmMain","order":3,"path":"rooms/rmMain/rmMain.yy",},
+    {"name":"rmServerTest","order":1,"path":"rooms/rmServerTest/rmServerTest.yy",},
+    {"name":"spawn_nav_menu","order":1,"path":"scripts/spawn_nav_menu/spawn_nav_menu.yy",},
+    {"name":"sprInterviewNode","order":1,"path":"sprites/sprInterviewNode/sprInterviewNode.yy",},
+  ],
 }

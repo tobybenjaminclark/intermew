@@ -1,0 +1,18 @@
+{
+    "name": "John Doe",
+    "position": "Software Engineer",
+    "interviews": [
+        {
+            "name": "Alice Johnson",
+            "type": "Technical"
+        },
+        {
+            "name": "Bob Smith",
+            "type": "HR"
+        },
+        {
+            "name": "Charlie Brown",
+            "type": "Managerial"
+        }
+    ]
+}
