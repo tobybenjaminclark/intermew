@@ -32,6 +32,7 @@
     {"$GMObjectProperty":"v1","%Name":"type","filters":[],"listItems":[],"multiselect":false,"name":"type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Panel","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"interview_path","filters":[],"listItems":[],"multiselect":false,"name":"interview_path","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"interview_company.json","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"interview_index","filters":[],"listItems":[],"multiselect":false,"name":"interview_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"scre","filters":[],"listItems":[],"multiselect":false,"name":"scre","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

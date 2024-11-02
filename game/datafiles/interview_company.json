@@ -1,18 +1,21 @@
 {
-    "name": "John Doe",
+    "name": "Marshall Wace",
     "position": "Software Engineer",
     "interviews": [
         {
-            "name": "Alice Johnson",
-            "type": "Technical"
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
         },
         {
-            "name": "Bob Smith",
-            "type": "HR"
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
         },
         {
-            "name": "Charlie Brown",
-            "type": "Managerial"
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
         }
     ]
 }

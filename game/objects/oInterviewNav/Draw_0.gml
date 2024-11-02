@@ -9,3 +9,4 @@ draw_set_halign(fa_center);
 draw_text(x, y + 100, "Interview Node");
 draw_text(x, y + 120, name);
 draw_text(x, y + 140, type);
+draw_text(x, y + 160, scre);
