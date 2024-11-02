@@ -27,16 +27,20 @@ class SpeechRecognitionStream():
     def create_thread(self) -> threading.Thread:
         self.buffer = ""
         self.exists = True
+        self.stop_event: threading.Event = threading.Event()
         self.thread = threading.Thread(
             target=self.begin_retrieval, args=(self.stop_event,)
         )
         self.thread.start()
 
     def stop_thread(self) -> None:
+        self.exists = False
         self.stop_event.set()
         self.thread.join()
 
     def send_data(self) -> None:
+
+        print(f"speech recognition sending data")
         if not self.exists:
             return
 

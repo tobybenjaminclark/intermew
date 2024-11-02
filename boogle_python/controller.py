@@ -124,6 +124,7 @@ class Controller:
                 match replies_dict["status"]:
                     case "create":
                         if not stream_instance.exists:
+                            print("creating thread")
                             stream_instance.start_thread()  # Call start_thread on the instance
                     case "destroy":
                         if stream_instance.exists:
