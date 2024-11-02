@@ -31,6 +31,9 @@ function spawn_nav_menu(file_path) {
 	with(oPositionNav) {
 		instance_destroy(self);	
 	}
+	with(oPieChart) {
+		instance_destroy(self);	
+	}
 	
     // Output or use the parsed data
     show_debug_message("Name: " + heading);
@@ -58,6 +61,10 @@ function spawn_nav_menu(file_path) {
 			interview_index: i
 	    });
 	}
-
+	
+	with(oStatVis) {
+		instance_destroy(self);	
+	}
+	
 	return;
 }

@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function spawn_stats(interview_path, interview_index, stats);
+function spawn_stats(interview_path, interview_index, stats)
 {
     // Open the file for reading
 	var file_path = interview_path;
@@ -32,17 +32,13 @@ function spawn_stats(interview_path, interview_index, stats);
 	var _x = room_width div 2;
 	var _y = room_height div 2;
 	var interview = interviews[interview_index];
-	instance_create_layer(_x, _y, "Instances", oInterview, {
-	    name: interview.name,
-	    type: interview.type,
-		company: heading,
-		role: position,
+	instance_create_layer(_x, _y, "Instances", oStatVis, {
 		interview_path: file_path,
 		interview_index: interview_index
 	});
 	
 	// Destroy all position navs.
-	with(oPreInterview) {
+	with(oInterview) {
 		instance_destroy(self);	
 	}
 }

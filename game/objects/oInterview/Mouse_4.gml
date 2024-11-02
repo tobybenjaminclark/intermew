@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-spawn_stats(interview_path, interview_index, stats);
+spawn_stats(interview_path, interview_index, 1);
