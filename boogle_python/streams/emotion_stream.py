@@ -20,6 +20,7 @@ class EmotionStream():
         """
 
         self.frame = None
+        self.last_sent = time.time()
 
 
         # Create an event to signal the subthreads to safely stop execution.
@@ -126,13 +127,19 @@ class EmotionStream():
                 writer = csv.writer(file)
                 writer.writerow([anger, disgust, fear, happiness, sadness, surprise, neutral, face_position_x, face_position_y, center_closeness])
 
+            current_time = time.time()
+            if current_time - self.last_sent > 1:
+                self.last_sent = current_time
+                data = {"from": "emotion_stream",
+                        "dominant_emotion": dominant_emotion}
+                self.send_queue.put(data)
 
             # Draw rectangle around face and label with predicted emotion
-            cv2.rectangle(self.frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
-            cv2.putText(self.frame, dominant_emotion, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
-        cv2.imshow("", self.frame)
-        cv2.waitKey(1)
-        
+            #cv2.rectangle(self.frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            #cv2.putText(self.frame, dominant_emotion, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+        #cv2.imshow("", self.frame)
+        #cv2.waitKey(1)
+
         self.new_data = False
 
     def begin_retrieval(self, stop_event) -> None:

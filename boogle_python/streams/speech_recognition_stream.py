@@ -58,11 +58,8 @@ class SpeechRecognitionStream():
 
     def process_text(self, text):
         self.buffer += text
-        try:
-            data = json.dumps({"from": "speech_recognition_stream", "message_data": self.buffer})
-            self.send_queue.put(data)
-        except Exception as e:
-            print(e)
+        data = json.dumps({"from": "speech_recognition_stream", "message_data": self.buffer})
+        self.send_queue.put(data)
     
 
             

@@ -94,23 +94,13 @@ class Controller:
         # RECEIVE
         if not self.client_replies_queue.empty():
             replies_dict = self.client_replies_queue.get()
-            print(f"replies: {replies_dict}")
+            print(f"replies: {repr(replies_dict)}")
             self.handle_client_replies(replies_dict)
             return True
         return False
 
     def handle_client_replies(self, replies_dict) -> None:
         """Handles replies from the client and manages thread states."""
-
-        if "action" in replies_dict:
-            match replies_dict["action"]:
-                case "start_interview":
-                    # start emotion
-                    stream_instance = self.stream_instances["emotion_stream"]['instance']
-                    stream_instance.start_thread()
-                case "stop_interview":
-                    self.stop_all_streams()
-                    aggregate_emotion_data = self.stream_instances["emotion_stream"]["instance"].get_interview_data()
 
 
         if "from" in replies_dict:
