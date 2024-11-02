@@ -23,7 +23,7 @@ function spawn_nav_menu(file_path) {
     }
     
     // Parse the data
-    var name = json_data.name;
+    var heading = json_data.name;
     var position = json_data.position;
     var interviews = json_data.interviews;
 
@@ -33,23 +33,31 @@ function spawn_nav_menu(file_path) {
 	}
 	
     // Output or use the parsed data
-    show_debug_message("Name: " + name);
+    show_debug_message("Name: " + heading);
     show_debug_message("Position: " + position);
+	
+	instance_create_layer(room_width div 2, room_height div 4, "Instances", oJobHeader, {
+		company: heading,
+		role: position
+	});
     
-	var OFFSET = 100;
-	var WIDTH = 200;
-    for (var i = 0; i < array_length(interviews); i++) {
-		var _y = room_height div 2;
-		var _x = OFFSET + (WIDTH * i);
-        var interview = interviews[i];
-        instance_create_layer(_x, _y, "Instances", oInterviewNav, {
-			name: interview.name,
-			type: interview.type
-		});
-    }
-	
+	var PADDING_PERCENT = 0.2; // 10% padding from each side
+	var num_interviews = array_length(interviews);
+	var room_padding = room_width * PADDING_PERCENT;
+	var available_width = room_width - (2 * room_padding);
+	var spacing = available_width / (num_interviews - 1);
 
-	
-	
+	for (var i = 0; i < num_interviews; i++) {
+	    var _y = room_height div 2;
+	    var _x = room_padding + (spacing * i);
+	    var interview = interviews[i];
+	    instance_create_layer(_x, _y, "Instances", oInterviewNav, {
+	        name: interview.name,
+	        type: interview.type,
+			interview_path: file_path,
+			interview_index: i
+	    });
+	}
+
 	return;
 }

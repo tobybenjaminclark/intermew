@@ -18,11 +18,16 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oInterviewNav","order":1,"path":"objects/oInterviewNav/oInterviewNav.yy",},
+    {"name":"oJobHeader","order":3,"path":"objects/oJobHeader/oJobHeader.yy",},
     {"name":"oPositionNav","order":2,"path":"objects/oPositionNav/oPositionNav.yy",},
-    {"name":"rmInterviewStages","order":5,"path":"rooms/rmInterviewStages/rmInterviewStages.yy",},
+    {"name":"oPreInterview","order":5,"path":"objects/oPreInterview/oPreInterview.yy",},
+    {"name":"rmInterview","order":4,"path":"rooms/rmInterview/rmInterview.yy",},
     {"name":"rmMain","order":3,"path":"rooms/rmMain/rmMain.yy",},
+    {"name":"rmPreInterview","order":5,"path":"rooms/rmPreInterview/rmPreInterview.yy",},
     {"name":"rmServerTest","order":1,"path":"rooms/rmServerTest/rmServerTest.yy",},
+    {"name":"spawn_interview","order":2,"path":"scripts/spawn_interview/spawn_interview.yy",},
     {"name":"spawn_nav_menu","order":1,"path":"scripts/spawn_nav_menu/spawn_nav_menu.yy",},
     {"name":"sprInterviewNode","order":1,"path":"sprites/sprInterviewNode/sprInterviewNode.yy",},
+    {"name":"sprPreInterview","order":2,"path":"sprites/sprPreInterview/sprPreInterview.yy",},
   ],
 }

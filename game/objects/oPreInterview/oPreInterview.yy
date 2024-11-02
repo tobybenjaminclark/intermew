@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"oInterviewNav",
+  "%Name":"oPreInterview",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oInterviewNav",
+  "name":"oPreInterview",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,13 +30,15 @@
     {"$GMObjectProperty":"v1","%Name":"type","filters":[],"listItems":[],"multiselect":false,"name":"type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Panel","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"interview_path","filters":[],"listItems":[],"multiselect":false,"name":"interview_path","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"interview_company.json","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"interview_index","filters":[],"listItems":[],"multiselect":false,"name":"interview_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"company","filters":[],"listItems":[],"multiselect":false,"name":"company","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Company","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"role","filters":[],"listItems":[],"multiselect":false,"name":"role","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Role","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprPositionNav",
-    "path":"sprites/sprPositionNav/sprPositionNav.yy",
+    "name":"sprPreInterview",
+    "path":"sprites/sprPreInterview/sprPreInterview.yy",
   },
   "spriteMaskId":null,
   "visible":true,
