@@ -34,6 +34,13 @@ function spawn_nav_menu(file_path) {
 	with(oPieChart) {
 		instance_destroy(self);	
 	}
+	with(oGotoSettings) {
+		instance_destroy(self);	
+	}
+	with(oBackToMenu) {
+		instance_destroy(self);	
+	}
+	
 	
     // Output or use the parsed data
     show_debug_message("Name: " + heading);
@@ -43,6 +50,9 @@ function spawn_nav_menu(file_path) {
 		company: heading,
 		role: position
 	});
+	
+	// Make return to menu button
+	instance_create_layer(50, 50, "Instances", oBackToMenu);
     
 	var PADDING_PERCENT = 0.2; // 10% padding from each side
 	var num_interviews = array_length(interviews);
@@ -58,7 +68,8 @@ function spawn_nav_menu(file_path) {
 	        name: interview.name,
 	        type: interview.type,
 			interview_path: file_path,
-			interview_index: i
+			interview_index: i,
+			scre: interview.score
 	    });
 	}
 	

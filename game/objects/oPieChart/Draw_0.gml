@@ -54,5 +54,7 @@ draw_set_color(c_white);
 // Draw Text Label
 draw_set_halign(fa_center);
 draw_set_alpha(current_step / PIE_CHART_TIME)
-draw_set_font(PIE_CHART_LABEL_FONT);
-draw_text(x, y + upper_radius + PIE_CHART_LABEL_OFFSET, label)
+//draw_set_font(PIE_CHART_LABEL_FONT);
+draw_text(x, y + upper_radius + PIE_CHART_LABEL_OFFSET, label);
+
+draw_set_alpha(1);

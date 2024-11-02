@@ -14,3 +14,6 @@ draw_text(x, y + 180, role);
 // Draw some debug stuff.
 draw_text(5, room_height - 10, interview_index);
 draw_text(100, room_height - 10, interview_path);
+
+// Create Monster
+instance_create_layer(0, 0, "Instances", oMonster);

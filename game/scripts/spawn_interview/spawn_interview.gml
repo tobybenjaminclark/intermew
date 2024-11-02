@@ -37,6 +37,9 @@ function spawn_interview(interview_path, interview_index)
 	with(oJobHeader) {
 		instance_destroy(self);	
 	}
+	with(oBackToMenu) {
+		instance_destroy(self);	
+	}
 
 	var _x = room_width div 2;
 	var _y = room_height div 2;
