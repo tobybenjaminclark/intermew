@@ -46,7 +46,7 @@ function spawn_nav_menu(file_path) {
     show_debug_message("Name: " + heading);
     show_debug_message("Position: " + position);
 	
-	instance_create_layer(room_width div 2, room_height div 4, "Instances", oJobHeader, {
+	instance_create_layer(room_width div 2, room_height div 5, "Instances", oJobHeader, {
 		company: heading,
 		role: position
 	});
@@ -61,7 +61,7 @@ function spawn_nav_menu(file_path) {
 	var spacing = available_width / (num_interviews - 1);
 
 	for (var i = 0; i < num_interviews; i++) {
-	    var _y = room_height div 2;
+	    var _y = (room_height div 8) * 4.5;
 	    var _x = room_padding + (spacing * i);
 	    var interview = interviews[i];
 	    instance_create_layer(_x, _y, "Instances", oInterviewNav, {

@@ -62,4 +62,4 @@ part_emitter_region(_ps, _pemit3, -32, 32, -32, 32, ps_shape_rectangle, ps_distr
 part_emitter_stream(_ps, _pemit3, _ptype3, 1);
 part_emitter_interval(_ps, _pemit3, 0.1, 0.1, time_source_units_seconds);
 
-
+_sid= audio_play_sound(sndSpaceSound, 0, true);

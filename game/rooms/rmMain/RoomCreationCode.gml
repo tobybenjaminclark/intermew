@@ -1,0 +1,1 @@
+spawn_nav_menu(global.interview_path);
