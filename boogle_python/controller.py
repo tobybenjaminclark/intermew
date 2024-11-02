@@ -3,6 +3,8 @@ from boogle_python.cv_client import GMS2Client
 from boogle_python.streams.test_stream import TestStream
 from boogle_python.streams.camera_stream import CameraStream
 from boogle_python.streams.emotion_stream import EmotionStream
+from boogle_python.streams.speech_recognition_stream import SpeechRecognitionStream
+
 from queue import Queue
 import cv2
 import pandas as pd
@@ -27,6 +29,7 @@ class Controller:
         self.create_stream('test_stream', TestStream)
         self.create_stream('camera_stream', CameraStream)
         self.create_stream('emotion_stream', EmotionStream)
+        self.create_stream('speech_recognition_stream', SpeechRecognitionStream)
 
     def create_stream(self, name: str, stream_class) -> None:
         """Generic method to create a stream instance."""
