@@ -68,6 +68,7 @@ class PromptGenerator():
         elif self.counter < self.interview_length:
 
             self.log.append(inp)
+            
             # Add user response to context
             self.context.append({"role": "user", "content": inp})
             
