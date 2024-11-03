@@ -101,7 +101,7 @@ class PromptGenerator():
         # Generate a review of the user's responses
         review_prompt = (
             "Here are the user's responses during the interview:\n" +
-            "\n".join(self.log) +
+            "\n" + self.log +
             "\n\nBased on these responses, provide feedback on what the user could improve."
         )
 
