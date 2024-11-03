@@ -130,6 +130,15 @@ class Controller:
                     case "destroy":
                         if stream_instance.exists:
                             stream_instance.stop_thread()  # Call stop_thread on the instance
+            
+            else:
+                if stream_name == "vim":
+                    title = replies_dict["title"]
+                    question = replies_dict["question"]
+                    answer = replies_dict["answer"]
+                    examples = replies_dict["examples"]
+                    is_correct = self.prompt_generator_instance.is_leetcode_correct(title, question, examples, answer)
+                    self.client_queue.put(json.dumps({"leetcode_passed": is_correct}))
 
 
 
