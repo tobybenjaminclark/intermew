@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"spawn_nav_menu",
   "isCompatibility":false,
   "isDnD":false,

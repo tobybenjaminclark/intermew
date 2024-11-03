@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"start_interview",
   "isCompatibility":false,
   "isDnD":false,
