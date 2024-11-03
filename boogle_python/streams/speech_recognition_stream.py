@@ -44,7 +44,7 @@ class SpeechRecognitionStream:
         if self.thread is not None:
             self.thread.join()
 
-    def record_audio(self, duration=5, fs=44100, filename='output.mp4'):
+    def record_audio(self, duration=14, fs=44100, filename='output.mp4'):
         """Record audio for a specified duration and sample rate, then save it as an MP4 file."""
         print("Recording audio...")
         audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='float64')
@@ -74,9 +74,7 @@ class SpeechRecognitionStream:
                 model="whisper-1",
                 file=f
             )
-
             print(response)
-
             return response.text
 
 

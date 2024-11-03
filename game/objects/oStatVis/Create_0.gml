@@ -2,7 +2,11 @@
 // You can write your code in this editor
 
 // Update Score
-update_score(interview_path, interview_index, 95);
+if(avg_happy > 0.2){
+	scr = random_range(70, 100);
+}
+
+update_score(interview_path, interview_index, scr);
 
 var emotion_data = global.emotion_stats;
 
@@ -42,6 +46,7 @@ var avg_sad = sum_sad / 50;
 var avg_center_closeness = sum_center_closeness / 50;
 
 // Create the pie chart instance
+
 pie_chart = instance_create_layer(x + 300, y, "Instances", oPieChart, {
     data: [
         avg_surprise, 

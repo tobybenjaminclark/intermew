@@ -1,8 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Create Event
-countdown_value = 15;
+draw_self();
 
-has_started = false;
-image_index = 1;
+draw_set_font(fntGigaHeader);
+draw_text(x - 120, y, string(scr) + "%");

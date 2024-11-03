@@ -11,7 +11,7 @@ import time
 class PromptGenerator():
     def __init__(self, queue, parent):
         self.counter = -1
-        self.interview_length = 0
+        self.interview_length = 4
         self.queue = queue
         self.tts = TTS(queue)
         self.parent = parent
@@ -33,8 +33,8 @@ class PromptGenerator():
 
             # Formulate the initial prompt with job description details
             prompt = (
-                f"Begin an interview with the candidate for the following position:\n\n{inp}\n\n"
-                "Start with a greeting and an initial interview question. Make your response short."
+                f"YOU ARE THE INTERVIEWER, ACT AS THE INTERVIEWER. Begin an interview with the candidate for the following position:\n\n{inp}\n\n"
+                "Start with a greeting and an initial interview question. Make your response SHORT AND CONCISE."
             )
             
             response = self.client.chat.completions.create(
@@ -66,7 +66,7 @@ class PromptGenerator():
             )
 
             prompt = (
-                f"The candidate has replied {inp}. How do you respond? Keep your response short and ask a question."
+                f"YOU ARE STILL THE INTERVIEWER. The candidate has replied '{inp}'. How do you respond? Keep your response SHORT AND CONCISE and ask a question."
             )
             
             follow_up_question = response.choices[0].message.content
