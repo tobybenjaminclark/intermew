@@ -105,6 +105,8 @@ class PromptGenerator():
             "\n\nBased on these responses, provide feedback on what the user could improve."
         )
 
+        print(f"REVIEW_PROMPT: {review_prompt}")
+        
         # Create a feedback response using the OpenAI API
         feedback_response = self.client.chat.completions.create(
             model="gpt-4",
