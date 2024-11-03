@@ -11,7 +11,7 @@ import time
 class PromptGenerator():
     def __init__(self, queue, parent):
         self.counter = -1
-        self.interview_length = 1
+        self.interview_length = 0
         self.queue = queue
         self.tts = TTS(queue)
         self.parent = parent
@@ -97,6 +97,8 @@ class PromptGenerator():
 
     def handle_log(self):
         print(f"log: {self.log}")
+
+
         
         # Generate a review of the user's responses
         review_prompt = (
