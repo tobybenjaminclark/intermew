@@ -21,47 +21,51 @@ if(n_id == server_socket)
 
 		try
 		{
-        jsonData = json_parse(originalString)
+	        jsonData = json_parse(originalString)
 		
-		if variable_struct_exists(jsonData, "leetcode_passed") {
-            if jsonData.leetcode_passed == 1 {
-                global.pass = "passed"
-            }
-            else {
-                global.pass = "failed"
-            }
-        }
-		// Asynchronous Networking Event
-		if variable_struct_exists(jsonData, "from") {
-			
-		    if jsonData.from == "camera_stream" {
-				
-				if variable_struct_exists(jsonData, "image_data") and variable_struct_exists(jsonData, "format") {
-					
-					var base64_data = jsonData.image_data;
-					var format = jsonData.format;
-
-			        // Decode Base64 string to binary
-			        var decoded_buffer = buffer_base64_decode(base64_data);
-
-			        // Save as a temporary image file
-			        var temp_file = working_directory + "temp_image." + format;
-			        buffer_save(decoded_buffer, temp_file);
-
-			        // Load image as sprite
-			        global.received_sprite = sprite_add(temp_file, 0, 0, 0, 0, 0);
-
-			        // Clean up
-			        buffer_delete(decoded_buffer);
-			        json_destroy(jsonData);
-				}
-
-
-		    } else {
-				show_debug_message(jsonData);
+			if variable_struct_exists(jsonData, "leetcode_passed") {
+	            if jsonData.leetcode_passed == 1 {
+	                global.pass = "passed"
+				} else {
+	                global.pass = "failed"
+	            }
 			}
+			// Asynchronous Networking Event
+			if variable_struct_exists(jsonData, "from") {
 			
+			    if jsonData.from == "camera_stream" {
+				
+					if variable_struct_exists(jsonData, "image_data") and variable_struct_exists(jsonData, "format") {
+					
+						var base64_data = jsonData.image_data;
+						var format = jsonData.format;
+
+				        // Decode Base64 string to binary
+				        var decoded_buffer = buffer_base64_decode(base64_data);
+
+				        // Save as a temporary image file
+				        var temp_file = working_directory + "temp_image." + format;
+				        buffer_save(decoded_buffer, temp_file);
+
+				        // Load image as sprite
+				        global.received_sprite = sprite_add(temp_file, 0, 0, 0, 0, 0);
+
+				        // Clean up
+				        buffer_delete(decoded_buffer);
+				        json_destroy(jsonData);
+					}
+
+
+				}
 			
+			}
+			if (jsonData.from == "aggregate") {
+				var msg = jsonData.agdata;
+				global.emotion_stats= jsonData.agdata;
+				global.fdback = jsonData.agdata.good_feedback;
+				global.bad_feedback = jsonData.agdata.bad_feedback;
+				show_debug_message("aggregate data emotion: " + string(msg));
+				room_goto(rmStats);
 			}
 			if jsonData.from == "emotion_stream" {
 				if variable_struct_exists(jsonData, "dominant_emotion") {
@@ -72,9 +76,11 @@ if(n_id == server_socket)
 				if variable_struct_exists(jsonData, "aggregate_data") {
 					var msg = jsonData.aggregate_data;
 					global.emotion_stats= jsonData.aggregate_data;
-					global.fdback = jsonData.aggregate_data.feedback;
+					global.fdback = jsonData.aggregate_data.good_feedback;
+					global.bad_feedback = jsonData.aggregate_data.bad_feedback;
 					show_debug_message("aggregate data emotion: " + string(msg));
-					spawn_stats(global.interview_path, global.interview_index, "")
+					room_goto(rmStats);
+					
 				}
 			}
 			if jsonData.from == "speech_recognition_stream" {
@@ -104,10 +110,10 @@ if(n_id == server_socket)
 					
 					if(msg == "Thank You!"){
 						instance_create_layer(x, y, "Instances", oInterviewEnd, {});
+					} else {
+						global.interviewer_text = newline_string(msg);
+						instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
 					}
-					
-					global.interviewer_text = newline_string(msg);
-					instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
 					
 
 				}
@@ -123,6 +129,6 @@ if(n_id == server_socket)
 				}	
 			}
 		}
-		catch(e) {}
+	catch(e) {}
     }
 }

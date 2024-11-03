@@ -3,5 +3,5 @@
 
 draw_self();
 
-draw_set_font(fntGigaHeader);
-draw_text(x - 120, y, string(scr) + "%");
+draw_set_font(fntJobHeading);
+draw_text(x + 200, y, string(scr) + "%");

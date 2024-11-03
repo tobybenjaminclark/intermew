@@ -148,7 +148,7 @@ class EmotionStream():
             self.send_data()
             time.sleep(0.1)
 
-    def get_interview_data(self, feedback: str, num_portions=50):
+    def get_interview_data(self, good_feedback: str, bad_feedback, num_portions=50):
         # Read the CSV file
         data = pd.read_csv(self.file_path)
 
@@ -168,14 +168,15 @@ class EmotionStream():
             averages[f'portion_{i + 1}'] = avg_values
 
         # Add the feedback to the averages dictionary
-        averages['feedback'] = feedback  # Include feedback as part of the averages
+        averages['good_feedback'] = good_feedback  # Include feedback as part of the averages
+        averages['bad_feedback'] = bad_feedback  # Include feedback as part of the averages
 
         print(averages)
 
         # Prepare the data dictionary for sending to the queue
         data = {
-            "from": "emotion_stream",
-            "aggregate_data": averages
+            "from": "aggregate",
+            "agdata": averages
         }
 
         # Send the updated data to the queue

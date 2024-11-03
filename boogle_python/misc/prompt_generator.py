@@ -11,7 +11,7 @@ import time
 class PromptGenerator():
     def __init__(self, queue=None, parent=None):
         self.counter = -1
-        self.interview_length = 4
+        self.interview_length = 3
         self.queue = queue
         self.tts = TTS(queue)
         self.parent = parent
@@ -94,8 +94,8 @@ class PromptGenerator():
                 "from": "end_interviewer",
                 "message_data": "Thank you!"
             }
-            feedback = self.handle_log()
-            self.parent.stream_instances["emotion_stream"]["instance"].get_interview_data(feedback)
+            good_feedback, bad_feedback = self.handle_log()
+            self.parent.stream_instances["emotion_stream"]["instance"].get_interview_data(good_feedback, bad_feedback)
             
             
 
@@ -114,27 +114,40 @@ class PromptGenerator():
 
         
         # Generate a review of the user's responses
-        review_prompt = (
+        good_review_prompt = (
             "Here are the user's responses during the interview:\n" +
             "\n" + "".join(["from: " + l["from"] + "\n" + " : " + l["message_data"] + "\n\n" for l in self.log]) +
-            "\n\nBased on these responses, provide feedback on what the user could improve."
+            "\n\nDiscuss the strengths of this application in a concise paragraph."
         )
 
-        print(f"REVIEW_PROMPT: {review_prompt}")
-        
+        bad_review_prompt = (
+            "Here are the user's responses during the interview:\n" +
+            "\n" + "".join(["from: " + l["from"] + "\n" + " : " + l["message_data"] + "\n\n" for l in self.log]) +
+            "\n\nDiscuss the weaknesses of this application in a concise paragraph."
+        )
+
         # Create a feedback response using the OpenAI API
-        feedback_response = self.client.chat.completions.create(
+        good_feedback_response = self.client.chat.completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a career coach."},
-                {"role": "user", "content": review_prompt}
+                {"role": "user", "content": good_review_prompt}
+            ]
+        )
+        
+        bad_feedback_response = self.client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": "You are a career coach."},
+                {"role": "user", "content": bad_review_prompt}
             ]
         )
 
-        feedback = feedback_response.choices[0].message.content
+        good_feedback = good_feedback_response.choices[0].message.content
+        bad_feedback = bad_feedback_response.choices[0].message.content
 
         self.log = []
-        return feedback
+        return good_feedback, bad_feedback
 
         
     def send_data(self, data) -> None:

@@ -32,7 +32,7 @@ draw_set_font(fntJobHeading);
 draw_outlined_text(x, 180, role);
 
 draw_set_font(fntJobSubheading);
-draw_text(x, 200, newline_string(description));
+draw_text(x, 260, newline_string(description));
 
 // Draw some debug stuff.
 draw_text(5, room_height - 10, interview_index);

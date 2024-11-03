@@ -47,8 +47,8 @@ for (var i = 0; i < array_length(data); i++) {
     
     // Label for the current segment
     var mid_angle = start_angle + segment_angle / 2;
-    var label_x = center_x + lengthdir_x(radius * 1.3, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
-    var label_y = center_y + lengthdir_y(radius * 1.3, radtodeg(mid_angle));
+    var label_x = center_x + lengthdir_x(radius * 1.4, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
+    var label_y = center_y + lengthdir_y(radius * 1.4, radtodeg(mid_angle));
     draw_set_color(c_white); // Assuming white text for labels
 	
 	draw_set_font(fntJobSubheading);

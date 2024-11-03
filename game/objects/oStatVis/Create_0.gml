@@ -1,14 +1,25 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Update Score
-if(avg_happy > 0.2){
-	scr = random_range(70, 100);
-}
+interview_path = global.interview_path;
+interview_index = global.interview_index;
 
-update_score(interview_path, interview_index, scr);
+// Update Score
+scr = random_range(50, 80);
 
 var emotion_data = global.emotion_stats;
+
+x = 125;
+y = 125;
+
+
+with(oBackground){
+	instance_destroy(self);
+}
+with (oVoiceController) {
+	instance_destroy(self);
+}
+
 
 // Initialize sums
 var sum_surprise = 0;
@@ -45,9 +56,15 @@ var avg_happy = sum_happy / 50;
 var avg_sad = sum_sad / 50;
 var avg_center_closeness = sum_center_closeness / 50;
 
-// Create the pie chart instance
+if(avg_happy > 0.2){
+	scr = random_range(70, 100);
+}
 
-pie_chart = instance_create_layer(x + 300, y, "Instances", oPieChart, {
+update_score(interview_path, interview_index, scr);
+
+
+// Create the pie chart instance
+pie_chart = instance_create_layer((room_width div 5 )* 4, room_height div 2 + 100, "Instances", oPieChart, {
     data: [
         avg_surprise, 
         avg_neutral, 

@@ -8,7 +8,7 @@ if (!variable_instance_exists(id, "notepad_text")) {
 }
 
 
-instance_create_layer(room_width div 2, room_height - 100, oBackToMenu, {});
+instance_create_layer(room_width div 2, room_height - 100, "Instances", oBackToMenu, {});
 
 var filepath = "leetcode/leetcode.json";
 

@@ -18,6 +18,6 @@ draw_set_font(fntJobSubheading);
 draw_text(room_width div 2, (room_height div 5) * 4, global.user_message);
 
 draw_set_font(fntJobHeading);
-draw_text(room_width div 5, (room_height div 3) * 2 + 15, "You");
+draw_text(room_width div 2, (room_height div 2) * 2 + 25, "You");
 
 draw_sprite(sprYourTurnToSpeak, 0, room_width - BUFFER - 10, room_height - BUFFER - 10);
