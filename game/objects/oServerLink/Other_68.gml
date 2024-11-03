@@ -61,6 +61,7 @@ if(n_id == server_socket)
 					var msg = jsonData.aggregate_data;
 					global.emotion_stats= jsonData.aggregate_data;
 					show_debug_message("aggregate data emotion: " + string(msg));
+					spawn_stats(global.interview_path, global.interview_index, "")
 				}
 			}
 			if jsonData.from == "speech_recognition_stream" {

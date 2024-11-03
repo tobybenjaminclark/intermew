@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 
+global.interview_index = interview_index;
 bg_spr = sprOfficeBackground1;
 instance_create_layer(0, 0, "Foreground", oBlackShadow, {});
 instance_create_layer(0, 0, "BGInstances", oBackground, {spr:bg_spr});
