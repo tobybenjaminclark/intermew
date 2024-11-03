@@ -30,6 +30,7 @@ class CameraStream():
 
     def start_thread(self) -> None:
         self.exists = True
+        self.event = threading.Event()
         self.create_thread()
         
     def create_thread(self) -> threading.Thread:
@@ -45,6 +46,7 @@ class CameraStream():
     def stop_thread(self) -> None:
 
         self.stop_event.set()
+        self.exists = False
         self.thread.join()
 
 

@@ -10,7 +10,6 @@ import json
 class TTS():
     def __init__(self, queue):
         
-
         self.speech_file_path = "speech.mp3"
 
         with open('boogle_python/key.txt', 'r') as file:
@@ -32,11 +31,15 @@ class TTS():
         # Load the MP3 file
         speech = AudioSegment.from_mp3(self.speech_file_path)
 
+
         # Play the MP3 file
         play(speech)
 
+        print("added to q")
         self.queue.put(json.dumps({"from": "speech_recognition_stream", "action": "done"}))
-
+        print("done adding to q")
+        print(self.queue)
+        
 
 
         

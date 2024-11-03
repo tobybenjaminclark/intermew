@@ -41,6 +41,7 @@ class SpeechRecognitionStream:
     def stop_thread(self) -> None:
         """Stop the speech recognition thread."""
         self.stop_event.set()
+        self.exists = False
         if self.thread is not None:
             self.thread.join()
 
@@ -77,8 +78,6 @@ class SpeechRecognitionStream:
             print(response)
             return response.text
 
-
-
     def process_text(self, text: str) -> None:
         """Process the recognized text and send it to the queue."""
         self.buffer += " " + text
@@ -87,12 +86,10 @@ class SpeechRecognitionStream:
 
     def begin_retrieval(self) -> None:
         """Continuously retrieve speech data until the stop event is set."""
-        while not self.stop_event.is_set():
-            audio = self.record_audio()
-            text = self.transcribe_audio(audio)
-            if text:
-                self.process_text(text)
-            time.sleep(0.1)
+        audio = self.record_audio()
+        text = self.transcribe_audio(audio)
+        if text:
+            self.process_text(text)
 
 
 if __name__ == "__main__":

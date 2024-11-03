@@ -20,7 +20,6 @@ class Controller:
         
         self.initialize_streams()
         self.create_client()
-        
 
         self.prompt_generator_instance = PromptGenerator(self.client_queue, self)
         
@@ -89,6 +88,8 @@ class Controller:
             queue = stream_info['queue']
             if not queue.empty():
                 message = queue.get()
+                if(len(message) < 100):
+                    print(f"SENDING {message}")
                 self.client_queue.put(message)
 
         # RECEIVE

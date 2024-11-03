@@ -1,0 +1,24 @@
+{
+    "position": "Software Developer C# - Computer Science Graduate",
+    "name": "client server",
+    "description": "A start-up Investment Management firm in Newcastle is seeking a Software Developer/Engineer with a computer science degree and experience in C# .Net, offering a competitive salary plus significant bonus and benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009503544324",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

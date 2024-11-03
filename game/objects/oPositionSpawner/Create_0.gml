@@ -1,7 +1,7 @@
 BUFFER = 200;
 cx = room_width div 2;
 cy = room_height div 2;
-max_radius = 700;
+max_radius = 400;
 
 // Get a list of all .json files in the datafiles directory
 var file_list = file_find_first("*.json", fa_readonly);
@@ -23,6 +23,7 @@ file_list = file_find_first("*.json", fa_readonly);
 while (file_list != "")
 {
     index += 1;
+	max_radius += 40;
     // Construct the full path for the file
     var file_path = "" + file_list;
         
@@ -44,15 +45,20 @@ while (file_list != "")
         var json_data = json_parse(json_string);
         var role = json_data.position;
         var company = json_data.name;
+		
+		if(company == "Marshall Wace"){
+			index -= 1;
+		} else {
             
         // Now, let's create an object.
-        var angle = (index / num_files) * 360;
+        var angle = (index / num_files) * (6 * 360);
         var _x = cx + lengthdir_x(max_radius, angle);
         var _y = cy + lengthdir_y(max_radius, angle);
         instance_create_layer(_x, _y, "Instances", oPositionNav, {interview_path: file_path,
 			_role: role,
 			_company: company});
-    }
+		}
+	}
         
     // Move to the next .json file
     file_list = file_find_next();

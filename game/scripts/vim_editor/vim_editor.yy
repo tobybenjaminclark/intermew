@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"vim_editor",
   "isCompatibility":false,
   "isDnD":false,

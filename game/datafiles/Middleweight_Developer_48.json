@@ -1,0 +1,24 @@
+{
+    "position": "Middleweight Developer",
+    "name": "Central Employment Agency (North East) Ltd.",
+    "description": "A Middleweight Developer is wanted by a renowned web development consultancy in Newcastle, who offers a \u00a335k-\u00a338k annual salary and excellent benefits; candidates must have excellent coding skills, commercial experience with different languages and frameworks, and have a drive for innovating and learning new technologies.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009474284787",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

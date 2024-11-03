@@ -87,6 +87,8 @@ function spawn_nav_menu(file_path) {
 		oURL, {_url:json_data.url});
 	}
 	
+	instance_create_layer(room_width - 10, room_height - 10, "Instances", oGoToTech, {});
+	
 	with(oStatVis) {
 		instance_destroy(self);	
 	}

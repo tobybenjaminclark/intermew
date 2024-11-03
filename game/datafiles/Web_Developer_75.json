@@ -1,0 +1,24 @@
+{
+    "position": "Web Developer",
+    "name": "Urban River",
+    "description": "Urban River Creative in South Tyneside is seeking a full-time, permanent WordPress Developer with expertise in HTML5, CSS3, PHP/MySQL, jQuery and bespoke WordPress Themes development, with desirable skills in WooCommerce, SEO and web design, to work in a hybrid remote position that provides generous leave, a company pension, and health scheme benefits.",
+    "url": "https://uk.indeed.com/viewjob?jk=f961856d1b934f00",
+    "is_remote": true,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

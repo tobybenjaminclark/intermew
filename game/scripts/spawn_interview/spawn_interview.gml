@@ -68,4 +68,7 @@ function spawn_interview(interview_path, interview_index)
 	with(oURL) {
 		instance_destroy(self);	
 	}
+	with(oGoToTech) {
+		instance_destroy(self);	
+	}
 }

@@ -1,0 +1,24 @@
+{
+    "position": "Senior Developer",
+    "name": "tombola",
+    "description": "Tombola is hiring a Senior Developer for our backend development team to create and deliver robust software solutions, mentor the team, lead technical discussions, own the delivery of highly available services, and contribute to the company's culture of inclusivity, flexibility, and personal development.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009486585635",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

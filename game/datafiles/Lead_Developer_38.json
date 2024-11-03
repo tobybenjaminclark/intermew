@@ -1,0 +1,24 @@
+{
+    "position": "Lead Developer",
+    "name": "tombola",
+    "description": "Tombola is seeking dynamic and innovative Lead Developers to join our Game Studio division where they will mentor and manage a game engine team, working with cutting-edge AWS Cloud Technologies to deliver engaging game mechanics across multiple territories, and offering great benefits such as quarterly bonus, free meals, private healthcare and hybrid working.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009486585783",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

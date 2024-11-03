@@ -1,0 +1,24 @@
+{
+    "position": "Frontend Developer",
+    "name": "Sage",
+    "description": "The Frontend Software Engineer will contribute to the design, development, and delivery of high-quality software using technologies like .NET C# framework, React.js, maintaining and updating relevant documentation, and collaborating with various business teams, all while using Agile Development Methodologies and ensuring that all tasks meet quality standards.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009498229193",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

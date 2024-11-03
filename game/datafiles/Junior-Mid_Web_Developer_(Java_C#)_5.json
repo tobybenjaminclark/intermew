@@ -1,0 +1,24 @@
+{
+    "position": "Junior-Mid Web Developer (Java/C#)",
+    "name": "Central Employment Agency (North East) Ltd.",
+    "description": "Central Employment is hiring a Junior-Mid Web Developer (Java/C#) with at least 2 years' experience in object-oriented languages and web technologies, to join their award-winning Web Development Consultancy in Newcastle, offering \u00a330k - \u00a334k p.a. plus benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009506731935",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -22,7 +22,15 @@ if(n_id == server_socket)
 		try
 		{
         jsonData = json_parse(originalString)
-
+		
+		if variable_struct_exists(jsonData, "leetcode_passed") {
+            if jsonData.leetcode_passed == 1 {
+                global.pass = "passed"
+            }
+            else {
+                global.pass = "failed"
+            }
+        }
 		// Asynchronous Networking Event
 		if variable_struct_exists(jsonData, "from") {
 			
@@ -49,7 +57,11 @@ if(n_id == server_socket)
 				}
 
 
-		    }
+		    } else {
+				show_debug_message(jsonData);
+			}
+			
+			
 			}
 			if jsonData.from == "emotion_stream" {
 				if variable_struct_exists(jsonData, "dominant_emotion") {
@@ -80,10 +92,10 @@ if(n_id == server_socket)
 						with(oInterviewVisualiser){
 							instance_destroy(self);
 						}
-						instance_create_layer(room_width div 3, room_height div 3, "Foreground", oVoiceController, {});
+						show_debug_message("Created oVoice Controller");
+						instance_create_layer(200, 200, "Foreground", oVoiceController, {});
 					}
 				}
-				
 			}
 			if jsonData.from == "interviewer" {
 				if variable_struct_exists(jsonData, "message_data") {

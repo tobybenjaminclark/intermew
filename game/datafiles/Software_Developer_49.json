@@ -1,0 +1,24 @@
+{
+    "position": "Software Developer",
+    "name": "MUS",
+    "description": "M Group Services is hiring a Full Stack Software Developer in Newcastle upon Tyne to join the IT Development team, with the responsibility for designing and developing business systems software across MGS; the role entails design documentation, technical support, and maintaining source control, with a minimum requirement of 2+ years of C#Microsoft.Net Full Stack development experience and knowledge of SQL.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009474014116",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

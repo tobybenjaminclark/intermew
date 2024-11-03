@@ -1,0 +1,24 @@
+{
+    "position": "Senior Software Developer C# .Net - FinTech",
+    "name": "client server",
+    "description": "A FinTech start-up in Newcastle is looking for a Senior Software Developer/Engineer with a minimum 2.1 BSc in Computer Science or similar from a top tier/Russel Group university and strong knowledge of modern C# .Net, offering a competitive salary (to \u00a3130k) plus significant bonus and benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009494755820",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

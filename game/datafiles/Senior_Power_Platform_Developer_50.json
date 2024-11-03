@@ -1,0 +1,24 @@
+{
+    "position": "Senior Power Platform Developer",
+    "name": "Norton Rose Fulbright",
+    "description": "Norton Rose Fulbright, a global law firm, is hiring a Senior Power Platform Developer for their Newcastle office, seeking someone innovative and commercial, who values work; this role involves designing and building technology solutions using Microsoft Power Platform and Azure services, maintaining technical best practices, and stimulating effective working relationships.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009474639904",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

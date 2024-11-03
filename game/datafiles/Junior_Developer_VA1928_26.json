@@ -1,0 +1,24 @@
+{
+    "position": "Junior Developer VA1928",
+    "name": "Anabas",
+    "description": "Anabas, a national Facilities Management company, is hiring a full-time Junior Developer with experience in Microsoft's Power Platform and software testing, offering a \u00a335,000 annual salary, hybrid working with a minimum of two days in-office, and an extensive benefits package including life insurance, a rewards scheme, and a wellness programme.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009497466388",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

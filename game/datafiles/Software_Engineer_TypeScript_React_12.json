@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer TypeScript React",
+    "name": "client server",
+    "description": "The start-up Investment Management firm is seeking a Software Engineer with experience in TypeScript and React for a role based in Newcastle, offering \u00a3100k salary plus benefits, where you can shape a role within a small team developing trading systems technology.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009503544323",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

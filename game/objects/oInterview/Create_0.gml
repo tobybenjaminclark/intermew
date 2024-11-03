@@ -15,4 +15,5 @@ with(oServerLink){
 	x = room_width div 2;
 	y = room_height div 2;
 }
+
 server_start_interview();

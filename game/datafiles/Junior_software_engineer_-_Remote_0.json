@@ -1,0 +1,24 @@
+{
+    "position": "Junior software engineer - Remote",
+    "name": "Jisc",
+    "description": "The UK digital, data and technology agency Jisc seeks a remote junior software engineer for their Trust & Identity development team, offering around \u00a326,000 per annum, flexible working hours and a multitude of exceptional benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009511393031",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

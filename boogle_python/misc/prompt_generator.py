@@ -67,7 +67,7 @@ class PromptGenerator():
 
         elif self.counter < self.interview_length:
 
-            self.log.append(inp)
+            self.log.append({"from":"candidate", "message_data":inp})
             
             # Add user response to context
             self.context.append({"role": "user", "content": inp})
@@ -143,8 +143,13 @@ class PromptGenerator():
         
     def start_interview(self, file_location: str):
         # read the file contents (interview)
-        with open(file_location, "r") as f:
-            contents = f.read()
+        try:
+            with open(file_location, "r") as f:
+                contents = f.read()
+        except:
+            print("Failed to load actual interview, loading the other one.")
+            with open("game/datafiles/Programmer_31.json", "r") as f:
+                contents = f.read()
 
             # Initialize context with system prompt
         self.context = [

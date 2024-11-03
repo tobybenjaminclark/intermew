@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer",
+    "name": "Amber Labs",
+    "description": "Amber Labs seeks a Full-Time Software Engineer to work on 12-month fixed-term contract at Manchester or Newcastle upon Tyne, utilizing skills in Java, JavaScript, Spring and Spring Boot to design, develop, and maintain high-quality software solutions, candidate must hold SC clearance and be comfortable working in Agile environments.\n",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009502104460",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

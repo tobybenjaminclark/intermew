@@ -1,0 +1,24 @@
+{
+    "position": "Power Apps Developer",
+    "name": "Balfour Beatty",
+    "description": "Balfour Beatty is seeking a Solution Analyst, preferably with experience but not essential, to join their team in either Newcastle upon Tyne or Scotland to develop, test, and release applications through the Microsoft Power Platform; applicants should demonstrate strong communication skills, problem-solving ability, teamwork, and passion for what they do.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009505506513",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -5,6 +5,7 @@ global.received_sprite = -1;
 global.interviewer_text = "interviewer has not spoken";
 global.who_is_speaking = "interviewer is speaking";
 global.user_message = "";
+global.pass = "Will it pass?"
 
 server_socket = network_connect_raw_async(global.client_socket, "127.0.0.1", 36042);
 

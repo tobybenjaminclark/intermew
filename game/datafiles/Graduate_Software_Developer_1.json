@@ -1,0 +1,24 @@
+{
+    "position": "Graduate Software Developer",
+    "name": "Harlow Solutions",
+    "description": "Harlow Solutions, a UK leader in print management and fulfilment services, is seeking a recent graduate with a degree in Software Development or a related field for a hands-on Graduate Software Developer role blending traditional coding with real-world print production tasks, including the creation and enhancement of print-ready products such as direct mail solutions and promotional games, in addition to supporting in-house software initiatives.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009511142609",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

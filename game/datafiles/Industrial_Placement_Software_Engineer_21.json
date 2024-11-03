@@ -1,0 +1,24 @@
+{
+    "position": "Industrial Placement Software Engineer",
+    "name": "Leonardo UK Ltd",
+    "description": "Leonardo is offering a paid 6 or 12 month Industrial Placement programme (\u00a325,000) in Edinburgh focussing on the development and coding of software solutions for embedded, real-time, and safety-critical applications within multidisciplinary teams, with significant support provided for both project and personal development, and potential future opportunities upon successful completion.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009498960324",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

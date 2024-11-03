@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"server_stop_listening",
   "isCompatibility":false,
   "isDnD":false,
