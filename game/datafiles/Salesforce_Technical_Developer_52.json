@@ -1,0 +1,24 @@
+{
+    "position": "Salesforce Technical Developer",
+    "name": "Accenture",
+    "description": "Accenture is hiring a Salesforce Technical Developer in Newcastle, United Kingdom, offering a competitive salary package with an innovative, diverse, and client-centric work environment, with the candidate being tasked to design, develop, and deploy integrated Salesforce-based solutions; the ideal candidate must have advanced Salesforce proficiency, experience in developing in a dynamic team environment, and advanced DevOps expertise.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009474730976",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "position": "PHP Software Engineer",
+    "name": "NexGen Associates",
+    "description": "Our Newcastle-based client is hiring two PHP Software Engineers, who are British nationals, with a salary of \u00a338,000-\u00a345,000 a year plus benefits; responsibilities include producing code, collaborating with the team on projects, maintaining projects and client liaisons, with required experience in PHP, JQuery, HTML, Apache, MySQL, Linux, Git, eCommerce, browser testing, SEO and mentoring/supervising developers.\n",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009497642011",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

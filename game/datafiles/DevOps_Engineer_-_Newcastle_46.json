@@ -1,0 +1,24 @@
+{
+    "position": "DevOps Engineer - Newcastle",
+    "name": "Accenture",
+    "description": "Accenture is seeking a Site Reliability Engineer experienced with OpenShift, Azure, Infrastructure as Code (IaC) tools, scripting languages, and DevSecOps principles to join their team in Newcastle and work on maintaining and improving the reliability, scalability, and performance of their infrastructure, however applicants must be willing to go through a security clearance process.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009479517545",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "position": "Senior Cloud Engineer",
+    "name": "Tandem Bank",
+    "description": "Tandem, UK's fast-growing digital bank, is hiring a Senior Cloud Engineer to improve the operational and cost efficiency of their AWS estate, with benefits including flexible work locations (fully remote or hybrid), a salary of \u00a375-85K, and up to 20% bonus; the job will require strong AWS knowledge, software development experience (C, C++, C#, Java, JavaScript), and working knowledge of the Financial Services or Fintech industry.",
+    "url": "https://uk.linkedin.com/jobs/view/senior-cloud-engineer-at-tandem-bank-4036962652?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+    "is_remote": true,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

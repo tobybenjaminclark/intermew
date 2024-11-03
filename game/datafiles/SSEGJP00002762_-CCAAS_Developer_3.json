@@ -1,0 +1,24 @@
+{
+    "position": "SSEGJP00002762 -CCAAS Developer",
+    "name": "Lorien",
+    "description": "Seeking a CCAAS Developer for a contract role in England/Scotland until March 2025, responsible for designing, building, maintaining software applications, and creating automated solutions using tools like OpenAI, Azure ML; applicants should have experience in DevOps principles, Agile environment, and software engineering, with strong computing, debugging skills and knowledge of programming technologies like .NET, C#, Javascript, Python.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009511469390",
+    "is_remote": true,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

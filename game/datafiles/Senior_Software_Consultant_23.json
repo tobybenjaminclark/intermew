@@ -1,0 +1,24 @@
+{
+    "position": "Senior Software Consultant",
+    "name": "Waterstons",
+    "description": "Waterstons, a global technological consultancy firm based in the UK and Australia, is hiring a consultant with a deep understanding of customer pain points, web development experience using C#, and leadership skills; offering unlimited holidays, flexible work hours, private medical healthcare, and an inclusive work environment, the responsibilities include delivering effective software solutions, seeking out growth opportunities, mentoring, and contributing to different software projects.\n",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009498135673",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

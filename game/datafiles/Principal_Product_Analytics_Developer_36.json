@@ -1,0 +1,24 @@
+{
+    "position": "Principal Product Analytics Developer",
+    "name": "BBC",
+    "description": "The BBC Public Service Broadcast is hiring a Principal Analytics Developer with at least 5 years\u2019 experience in a similar role (salary range \u00a355,000-\u00a371,000) on a permanent contract based in Salford or Newcastle, where responsibilities include creating clean datasets for their digital platform, designing and building ETL pipelines using SQL, mentoring team members, automating data pipelines, and developing ways of working within product data domains.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009487485087",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

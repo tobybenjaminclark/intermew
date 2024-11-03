@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer",
+    "name": "Resource Management Solutions",
+    "description": "RMS Recruitment is hiring a Software Engineer for a role based in Stockton-on-Tees offering \u00a335-40k p.a., a chance to have a direct impact on a global product, work flexibility, training, pension contributions, and more; the candidate will be involved in all aspects of software development and must have experience with building web applications, server-side programming, databases, API integration, front-end development, and team work.",
+    "url": "https://www.adzuna.co.uk/jobs/details/4895936553?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+    "is_remote": true,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

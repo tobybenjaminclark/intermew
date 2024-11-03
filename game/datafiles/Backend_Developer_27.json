@@ -1,0 +1,24 @@
+{
+    "position": "Backend Developer",
+    "name": "Sage",
+    "description": "The Software Engineer Backend, to be working three days a week at the Newcastle site, will build, enhance, automate and maintain products or systems using technologies like .NET C# framework, MySQL, JavaScript, and Node.js, while cross-collaborating with various teams and keeping up with technologies such as AI; should have 3+ years of relevant experience, startup mentality, and familiarity with Agile and SCRUM methodologies.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009497064480",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

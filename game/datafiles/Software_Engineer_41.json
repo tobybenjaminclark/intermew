@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer",
+    "name": "Sage",
+    "description": "We're seeking a Developer to join our UK Payroll team, helping with solution design and the development life cycle while working with technologies like C#, WPF, Visual Studio, Azure, and more, and demonstrating experience in guiding a software development team and evaluating technologies and practices.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009483866312",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

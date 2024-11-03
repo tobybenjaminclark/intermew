@@ -1,0 +1,24 @@
+{
+    "position": "Senior Java Developer - Newcastle",
+    "name": "Accenture",
+    "description": "Accenture is seeking a Senior Java Developer (with strong scripting and debugging skills) to work part-time from their Newcastle office, aiming to transform leading organizations through innovative technology solutions, offering an extensive benefits package, professional growth opportunities, and an environment that values inclusion and diversity.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009491798275",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

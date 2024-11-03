@@ -1,0 +1,24 @@
+{
+    "position": "Senior .NET Web Developer",
+    "name": "Thought",
+    "description": "Thought Consultancy is looking for a full-time Senior .NET Web Developer with 5+ years experience, to join their team in Newcastle upon Tyne, UK, offering a flexible work schedule, professional growth opportunities, and a salary range of \u00a353,591-\u00a357,400 per year along with benefits like a company pension and private medical insurance.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009074788520",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

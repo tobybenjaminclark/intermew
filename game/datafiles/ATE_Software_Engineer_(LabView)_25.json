@@ -1,0 +1,24 @@
+{
+    "position": "ATE Software Engineer (LabView)",
+    "name": "Pragmatic",
+    "description": "Pragmatic Semiconductor is seeking a Graduate/Associate Software engineer experienced in LabVIEW, automation, and testing, to join their team, develop and maintain testing procedures, manage the deployment of new test systems, and provide support to Test Operations Engineers in daily production test systems operation and maintenance.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009496079326",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

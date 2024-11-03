@@ -1,0 +1,24 @@
+{
+    "position": "Senior Software Consultant",
+    "name": "Waterstons Ltd",
+    "description": "Waterstons, a UK-Australia tech-company offering flexible working and exceptional benefits, is seeking a client-facing consultant with web development experience, able to translate customer problems into software solutions, and willing to mentor less-experienced developers; a strong understanding of C#/ .NET, agile delivery, DevOps practices and lifecycle is essential.\n",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009498079970",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "position": "Developer",
+    "name": "Sage",
+    "description": "Java Developer will be responsible for designing, developing and maintaining cloud-based applications, using Java and AWS, within an agile and collaborative team, striving for continuous improvements, and keeping up-to-date with relevant technologies.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009487450081",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

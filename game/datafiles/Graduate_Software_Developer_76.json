@@ -1,0 +1,24 @@
+{
+    "position": "Graduate Software Developer",
+    "name": "Harlow Printing Limited",
+    "description": "Harlow Solutions, a leading UK supplier of print and fulfilment services, is hiring a Graduate Software Developer to create, refine, and troubleshoot software for print-ready products, requiring a Bachelor's degree, problem-solving skills, and a passion for innovative solutions that integrate with tangible products; benefits include hands-on experience, professional growth, innovative work culture, and yearly bonuses.",
+    "url": "https://uk.indeed.com/viewjob?jk=b9c5e12e12644ffb",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

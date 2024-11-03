@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer",
+    "name": "RMS Recruitment",
+    "description": "RMS Recruitment is hiring a Software Engineer for a dynamic role in Stockton-on-Tees, with duties including building web applications, server-side programming, developing new features, troubleshooting the platform, and providing post-launch support, with an offer of \u00a335-40k per annum plus benefits such as flexible working hours, remote opportunities, and 25 days annual leave.",
+    "url": "https://www.adzuna.co.uk/jobs/details/4894520749?title=Software_Engineer&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+    "is_remote": true,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

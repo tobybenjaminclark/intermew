@@ -1,0 +1,24 @@
+{
+    "position": "Graduate Software Engineer",
+    "name": "Leonardo UK Ltd",
+    "description": "Leonardo, a globally renowned electronic and information technologies company, is seeking graduate software engineers for a paid 18-month program, who will have the opportunity to work on real-time projects, participate in all aspects of product development, and receive training and support to achieve personal development goals, with a degree in a relevant discipline and eligibility for UK Security Clearance required.\n",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009505786786",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "position": "Senior Software Engineer",
+    "name": "Sage",
+    "description": "The Sr. Software Engineer is responsible for designing and developing major features, mentoring other engineers, making significant architectural decisions, and working closely with Product Management and QA to ensure the overall quality and impact of implemented solutions, preferably with strong experience in C# or Python and previous integration experience with APIs.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009477101280",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

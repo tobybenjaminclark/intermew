@@ -1,0 +1,24 @@
+{
+    "position": "ATE Software Engineer",
+    "name": "Pragmatic",
+    "description": "Pragmatic Semiconductor is hiring a Graduate/Associate Software Engineer with experience in automation, testing, and LabVIEW for on-site work, ensuring quality automated test software, managing new test system deployments, debugging issues, and modifying PCB hardware.",
+    "url": "https://www.glassdoor.co.uk/job-listing/ate-software-engineer-pragmatic-JV_IC3314756_KO0,21_KE22,31.htm?jl=1009496079326&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

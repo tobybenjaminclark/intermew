@@ -1,0 +1,24 @@
+{
+    "position": "Web Developer",
+    "name": "Urban River",
+    "description": "Urban River Creative is seeking a full-time, permanent WordPress Developer living in the North East with expertise in HTML5, CSS3, PHP/MySQL, jQuery, and creating bespoke WordPress themes, to develop user-friendly websites; desirable skills include WooCommerce, SEO, and web design skills, with benefits including remote hybrid working, generous leave, company pension, and health benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009511198176",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}

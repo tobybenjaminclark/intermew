@@ -1,0 +1,24 @@
+{
+    "position": "Software Engineer III, Machine Learning, Google Cloud Performance",
+    "name": "Google",
+    "description": "Google is hiring a software engineer with a Bachelor's degree and 2 years of experience in software development and machine learning, preferring candidates with a Master's or PhD in Computer Science, experience with large scale systems data analysis and developing accessible technologies, to develop the next-generation technologies, manage project priorities, deadlines, and deliverables, and participate in design reviews with peers and stakeholders, offering a salary range of $136,000-$200,000 plus bonus, equity, and benefits.",
+    "url": "https://www.glassdoor.co.uk/job-listing/j?jl=1009480269889",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}
