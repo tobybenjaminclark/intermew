@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-has_started = false;
-image_index = 1;
+alpha = alpha - 0.005;
+if(alpha < 0) {
+	instance_destroy(self);	
+}

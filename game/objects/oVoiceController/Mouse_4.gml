@@ -3,7 +3,7 @@
 
 if(!has_started){
 	server_start_listening();
-	image_blend = c_aqua;
+	image_index = 0;
 	has_started = true;
 } else {
 	server_stop_listening();

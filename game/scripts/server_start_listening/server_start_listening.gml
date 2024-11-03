@@ -7,4 +7,6 @@ function server_start_listening(){
 		new_thread_msg = {from: "speech_recognition_stream", status:"create"};
 		send_to_server(new_thread_msg);
 	}
+	global.user_message = "";
+	instance_create_layer(x, y, "Foreground", oSpeechVisualiser, {});
 }

@@ -6,4 +6,7 @@ function server_stop_listening(){
 		new_thread_msg = {action:"input", message_data: global.user_message};
 		send_to_server(new_thread_msg);
 	}
+	with(oSpeechVisualiser){
+		instance_destroy(self);
+	}
 }

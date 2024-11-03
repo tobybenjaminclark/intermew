@@ -7,3 +7,12 @@ with(oMonster) {
 with(oBackground) {
 	instance_destroy(self);
 }
+with(oVoiceController) {
+	instance_destroy(self);
+}
+with(oSpeechVisualiser) {
+	instance_destroy(self);
+}
+with(oInterviewVisualiser) {
+	instance_destroy(self);
+}

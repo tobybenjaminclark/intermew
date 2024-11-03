@@ -62,7 +62,7 @@ if(n_id == server_socket)
 				
 				if variable_struct_exists(jsonData, "message_data") {
 					var msg = jsonData.message_data;
-					global.user_message = msg;
+					global.user_message = newline_string(msg);
 					show_debug_message("user has said: " + string(msg))
 					
 				}
@@ -70,6 +70,9 @@ if(n_id == server_socket)
 				if variable_struct_exists(jsonData, "action") {
 					if jsonData.action == "done" {
 						global.who_is_speaking = "user is speaking";
+						with(oInterviewVisualiser){
+							instance_destroy(self);
+						}
 						instance_create_layer(room_width div 3, room_height div 3, "Foreground", oVoiceController, {});
 					}
 				}
@@ -78,10 +81,28 @@ if(n_id == server_socket)
 			if jsonData.from == "interviewer" {
 				if variable_struct_exists(jsonData, "message_data") {
 					var msg = jsonData.message_data;
-					show_debug_message("interviewer has said: " + string(msg));
-					global.interviewer_text = msg;
+					show_debug_message("interviewer has said: '" + string(msg) +"'");
 					
+					if(msg == "Thank You!"){
+						instance_create_layer(x, y, "Instances", oInterviewEnd, {});
+					}
+					
+					global.interviewer_text = newline_string(msg);
+					instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
+					
+
 				}
+			}
+			if jsonData.from == "end_interviewer" {
+				if variable_struct_exists(jsonData, "message_data") {
+					var msg = jsonData.message_data;
+					show_debug_message("end_interviewer has said: '" + string(msg) +"'");
+					instance_create_layer(x, y, "Instances", oInterviewEnd, {});
+					global.interviewer_text = newline_string(msg);
+					instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
+					
+
+				}	
 			}
 			
 
