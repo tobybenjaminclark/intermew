@@ -110,7 +110,8 @@ class Controller:
                     thread = threading.Thread(target = self.prompt_generator_instance.start_interview, args = (file_location,))
                     thread.start()
                 case "input":
-                    user_reply = replies_dict["message_data"]
+                    user_reply = self.stream_instances["speech_recognition_stream"]["instance"].buffer
+                    print(f"\n\nreply: {user_reply}")
                     self.stream_instances["speech_recognition_stream"]["instance"].buffer = ""
                     thread = threading.Thread(target = self.prompt_generator_instance.generate_prompt, args = (user_reply,))
                     thread.start()
