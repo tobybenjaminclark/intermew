@@ -1,4 +1,5 @@
 
+
 import json
 from openai import OpenAI
 import openai
@@ -26,6 +27,9 @@ class PromptGenerator():
         self.counter +=1 
 
         if self.counter == 0:
+
+            self.log = []
+
             # Formulate the initial prompt with job description details
             prompt = (
                 f"Begin an interview with the candidate for the following position:\n\n{inp}\n\n"
@@ -45,8 +49,12 @@ class PromptGenerator():
                 "message_data": initial_message
             }
 
+            
+
 
         elif self.counter < self.interview_length:
+
+            self.log.append(inp)
             # Add user response to context
             self.context.append({"role": "user", "content": inp})
             
@@ -54,6 +62,10 @@ class PromptGenerator():
             response = self.client.chat.completions.create(
                 model="gpt-4",
                 messages=self.context
+            )
+
+            prompt = (
+                f"The candidate has replied {inp}. How do you respond? Keep your response short and ask a question."
             )
             
             follow_up_question = response.choices[0].message.content
@@ -71,6 +83,8 @@ class PromptGenerator():
 
         thread = threading.Thread(target=self.tts.speak, args=(reply["message_data"],))
         thread.start()
+
+        self.log.append(reply)
         
         time.sleep(2)
         self.send_data(reply)
