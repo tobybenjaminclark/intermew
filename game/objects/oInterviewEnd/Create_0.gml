@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-has_started = false;
-image_index = 1;
+alpha = 0;
+show_debug_message("oInterviewEnd Created");

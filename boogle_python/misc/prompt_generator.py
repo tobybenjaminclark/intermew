@@ -10,7 +10,7 @@ import time
 class PromptGenerator():
     def __init__(self, queue):
         self.counter = -1
-        self.interview_length = 5
+        self.interview_length = 1
         self.queue = queue
         self.tts = TTS(queue)
 
@@ -65,7 +65,7 @@ class PromptGenerator():
         
         else:
             reply = {
-                "from": "interviewer",
+                "from": "end_interviewer",
                 "message_data": "Thank you!"
             }
 
