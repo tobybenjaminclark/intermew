@@ -106,7 +106,8 @@ if(n_id == server_socket)
 					show_debug_message("end_interviewer has said: '" + string(msg) +"'");
 					instance_create_layer(x, y, "Instances", oInterviewEnd, {});
 					global.interviewer_text = newline_string(msg);
-					instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
+					instance_destroy(oVoiceController);
+					instance_destroy(oMonster);
 				}	
 			}
 		}

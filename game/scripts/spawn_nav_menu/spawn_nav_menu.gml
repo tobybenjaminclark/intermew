@@ -41,7 +41,7 @@ function spawn_nav_menu(file_path) {
 		instance_destroy(self);	
 	}
 	with(oBackToMenu) {
-		instance_destroy(self);	
+		instance_destroy(self);
 	}
 	
 	

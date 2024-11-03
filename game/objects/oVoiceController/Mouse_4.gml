@@ -5,7 +5,8 @@ if(!has_started){
 	server_start_listening();
 	image_index = 0;
 	has_started = true;
-} else {
-	server_stop_listening();
-	instance_destroy(self);
-}
+	
+	// Create Event
+	countdown_value = 15;
+	alarm[0] = room_speed; // Set alarm to 1 second
+} 
