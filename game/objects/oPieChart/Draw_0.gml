@@ -1,8 +1,7 @@
 /// @description Writes the pie chart to the surface using primitives.
 
 // Pie Chart Data and Colors
-var data = [30, 70, 20, 50]; // Values for each segment
-var colors = [c_red, c_green, c_blue, c_yellow]; // Colors for each segment
+var colors = [c_red, c_green, c_blue, c_yellow, c_aqua, c_green, c_gray, c_black]; // Colors for each segment
 
 // Define center and radius of the pie chart
 var center_x = x;
