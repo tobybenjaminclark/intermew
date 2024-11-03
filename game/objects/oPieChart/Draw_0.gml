@@ -43,6 +43,13 @@ for (var i = 0; i < array_length(data); i++) {
         draw_triangle(center_x, center_y, x1, y1, x2, y2, false);
     }
     
+    // Label for the current segment
+    var mid_angle = start_angle + segment_angle / 2;
+    var label_x = center_x + lengthdir_x(radius / 1.5, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
+    var label_y = center_y + lengthdir_y(radius / 1.5, radtodeg(mid_angle));
+    draw_set_color(c_white); // Assuming white text for labels
+    draw_text(label_x, label_y, labels[i]);
+    
     // Update start_angle for the next segment
     start_angle += segment_angle;
 }
