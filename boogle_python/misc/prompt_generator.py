@@ -80,9 +80,11 @@ class PromptGenerator():
                 "from": "interviewer",
                 "message_data": "Thank you!"
             }
+            self.stream_instances["emotion_stream"]["instance"].get_interview_data()
 
         thread = threading.Thread(target=self.tts.speak, args=(reply["message_data"],))
         thread.start()
+        
 
         self.log.append(reply)
         
