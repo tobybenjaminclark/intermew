@@ -57,6 +57,11 @@ if(n_id == server_socket)
 					show_debug_message("dominant emotion: " + string(msg));
 					
 				}
+				if variable_struct_exists(jsonData, "aggregate_data") {
+					var msg = jsonData.aggregate_data;
+					global.emotion_stats= jsonData.aggregate_data;
+					show_debug_message("aggregate data emotion: " + string(msg));
+				}
 			}
 			if jsonData.from == "speech_recognition_stream" {
 				
@@ -65,7 +70,7 @@ if(n_id == server_socket)
 					global.user_message = newline_string(msg);
 					show_debug_message("user has said: " + string(msg))
 					
-				}
+				}	
 				
 				if variable_struct_exists(jsonData, "action") {
 					if jsonData.action == "done" {
@@ -100,23 +105,9 @@ if(n_id == server_socket)
 					instance_create_layer(x, y, "Instances", oInterviewEnd, {});
 					global.interviewer_text = newline_string(msg);
 					instance_create_layer(x, y, "Foreground", oInterviewVisualiser, {});
-					
-
 				}	
 			}
-			
-
-
-
 		}
-		catch(e)
-		{
-		}
-		
-
-
-
-        //show_debug_message(jsonData)
-
+		catch(e) {}
     }
 }

@@ -1,8 +1,7 @@
 /// @description Writes the pie chart to the surface using primitives.
 
 // Pie Chart Data and Colors
-var data = [30, 70, 20, 50]; // Values for each segment
-var colors = [c_red, c_green, c_blue, c_yellow]; // Colors for each segment
+var colors = [c_red, c_green, c_blue, c_yellow, c_aqua, c_green, c_gray, c_black]; // Colors for each segment
 
 // Define center and radius of the pie chart
 var center_x = x;
@@ -43,6 +42,13 @@ for (var i = 0; i < array_length(data); i++) {
         // Draw triangle for this part of the segment
         draw_triangle(center_x, center_y, x1, y1, x2, y2, false);
     }
+    
+    // Label for the current segment
+    var mid_angle = start_angle + segment_angle / 2;
+    var label_x = center_x + lengthdir_x(radius / 1.5, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
+    var label_y = center_y + lengthdir_y(radius / 1.5, radtodeg(mid_angle));
+    draw_set_color(c_white); // Assuming white text for labels
+    draw_text(label_x, label_y, labels[i]);
     
     // Update start_angle for the next segment
     start_angle += segment_angle;
