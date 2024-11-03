@@ -11,7 +11,7 @@ import time
 class PromptGenerator():
     def __init__(self, queue, parent):
         self.counter = -1
-        self.interview_length = 1
+        self.interview_length = 0
         self.queue = queue
         self.tts = TTS(queue)
         self.parent = parent
@@ -97,6 +97,8 @@ class PromptGenerator():
 
     def handle_log(self):
         print(f"log: {self.log}")
+
+
         
         # Generate a review of the user's responses
         review_prompt = (
@@ -138,6 +140,22 @@ class PromptGenerator():
 
         self.generate_prompt(contents)
         
+    def is_leetcode_correct(self, title, question, examples, answer):
+        prompt = f"here is a leetcode question: {title} {question} {examples}. here is the answer: {answer}. reply YES if correct and NO if incorrect. only reply YES or NO"
+        # Generate the follow-up question
+        response = self.client.chat.completions.create(
+                model="gpt-4",
+                messages=prompt
+            )
+        
+        reply = response.choices[0].message.content
+        if "YES" in reply:
+            return 1
+        else:
+            return 0
+        
+
+
         
 if __name__ == "__main__":
     prompt_generator = PromptGenerator()

@@ -34,6 +34,9 @@ function spawn_nav_menu(file_path) {
 	with(oPieChart) {
 		instance_destroy(self);	
 	}
+	with(oLLMFeedback) {
+		instance_destroy(self);	
+	}
 	with(oGotoSettings) {
 		instance_destroy(self);	
 	}
