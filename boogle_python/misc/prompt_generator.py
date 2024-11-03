@@ -34,7 +34,7 @@ class PromptGenerator():
             # Formulate the initial prompt with job description details
             prompt = (
                 f"Begin an interview with the candidate for the following position:\n\n{inp}\n\n"
-                "Start with a greeting and an initial interview question."
+                "Start with a greeting and an initial interview question. Make your response short."
             )
             
             response = self.client.chat.completions.create(
@@ -81,7 +81,9 @@ class PromptGenerator():
                 "from": "end_interviewer",
                 "message_data": "Thank you!"
             }
-            self.parent.stream_instances["emotion_stream"]["instance"].get_interview_data()
+            feedback = self.handle_log()
+            self.parent.stream_instances["emotion_stream"]["instance"].get_interview_data(feedback)
+            
             
 
         thread = threading.Thread(target=self.tts.speak, args=(reply["message_data"],))
@@ -92,6 +94,31 @@ class PromptGenerator():
         
         time.sleep(2)
         self.send_data(reply)
+
+    def handle_log(self):
+        print(f"log: {self.log}")
+        
+        # Generate a review of the user's responses
+        review_prompt = (
+            "Here are the user's responses during the interview:\n" +
+            "\n".join(self.log) +
+            "\n\nBased on these responses, provide feedback on what the user could improve."
+        )
+
+        # Create a feedback response using the OpenAI API
+        feedback_response = self.client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": "You are a career coach."},
+                {"role": "user", "content": review_prompt}
+            ]
+        )
+
+        feedback = feedback_response.choices[0].message.content
+
+        self.log = []
+        return feedback
+
         
     def send_data(self, data) -> None:
         data_json = json.dumps(data)
