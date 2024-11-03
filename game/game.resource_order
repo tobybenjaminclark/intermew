@@ -85,6 +85,7 @@
     {"name":"sprInterviewIsSpeaking","order":12,"path":"sprites/sprInterviewIsSpeaking/sprInterviewIsSpeaking.yy",},
     {"name":"sprInterviewNode","order":1,"path":"sprites/sprInterviewNode/sprInterviewNode.yy",},
     {"name":"sprMouth","order":2,"path":"sprites/sprMouth/sprMouth.yy",},
+    {"name":"sprMouthOpen","order":6,"path":"sprites/sprMouthOpen/sprMouthOpen.yy",},
     {"name":"sprNose","order":3,"path":"sprites/sprNose/sprNose.yy",},
     {"name":"sprPreInterview","order":2,"path":"sprites/sprPreInterview/sprPreInterview.yy",},
     {"name":"sprRecording","order":11,"path":"sprites/sprRecording/sprRecording.yy",},

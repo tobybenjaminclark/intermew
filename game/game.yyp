@@ -120,6 +120,7 @@
     {"id":{"name":"sprInterviewIsSpeaking","path":"sprites/sprInterviewIsSpeaking/sprInterviewIsSpeaking.yy",},},
     {"id":{"name":"sprInterviewNode","path":"sprites/sprInterviewNode/sprInterviewNode.yy",},},
     {"id":{"name":"sprMouth","path":"sprites/sprMouth/sprMouth.yy",},},
+    {"id":{"name":"sprMouthOpen","path":"sprites/sprMouthOpen/sprMouthOpen.yy",},},
     {"id":{"name":"sprNose","path":"sprites/sprNose/sprNose.yy",},},
     {"id":{"name":"sprOfficeBackground1","path":"sprites/sprOfficeBackground1/sprOfficeBackground1.yy",},},
     {"id":{"name":"sprPositionNav","path":"sprites/sprPositionNav/sprPositionNav.yy",},},

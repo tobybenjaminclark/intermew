@@ -4,10 +4,10 @@
 draw_sprite(body, 0, x, y + 380);
 
 draw_sprite(face, 0 , x, y);
-draw_sprite(l_eye, 0, x + 240, y + 280);
-draw_sprite(r_eye, 0, x + 460, y + 280);
-draw_sprite(l_brow, 0, x + 240, y + 200);
-draw_sprite(r_brow, 0, x + 460, y + 200);
+draw_sprite(l_eye, 0, x + 270, y + 300);
+draw_sprite(r_eye, 0, x + 430, y + 300);
+draw_sprite(l_brow, 0, x + 270, y + 220);
+draw_sprite(r_brow, 0, x + 430, y + 220);
 draw_sprite(nose, 0, x + 350, y + 380);
 draw_sprite(mouth, 0, x + 360, 500);
 
