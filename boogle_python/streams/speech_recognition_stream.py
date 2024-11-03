@@ -10,10 +10,6 @@ from openai import OpenAI
 import soundfile as sf
 from moviepy.editor import AudioFileClip
 import os
-import pyaudio
-import wave
-import threading
-from pydub import AudioSegment
 
 class SpeechRecognitionStream:
     def __init__(self):
@@ -24,13 +20,7 @@ class SpeechRecognitionStream:
         self.send_queue = Queue()
         self.buffer = ""
         self.thread = None
-        self.chunk = 1024
-        self.format = pyaudio.paInt16
-        self.channels = 2
-        self.rate = 44100
-
-        # Create an audio interface
-        self.audio = pyaudio.PyAudio()
+        self.exists = False
         with open('boogle_python/key.txt', 'r') as file:
             self.key = file.read().strip()
 
@@ -39,6 +29,8 @@ class SpeechRecognitionStream:
     def start_thread(self) -> None:
         """Start the speech recognition thread."""
         if self.thread is None or not self.thread.is_alive():
+            self.exists = True
+            self.stop_event = threading.Event()
             self.create_thread()
 
     def create_thread(self) -> None:
@@ -52,7 +44,7 @@ class SpeechRecognitionStream:
         if self.thread is not None:
             self.thread.join()
 
-    def record_audio(self, duration=5, fs=44100, filename='output.mp4'):
+    def record_audio(self, duration=10, fs=44100, filename='output.mp4'):
         """Record audio for a specified duration and sample rate, then save it as an MP4 file."""
         print("Recording audio...")
         audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='float64')
