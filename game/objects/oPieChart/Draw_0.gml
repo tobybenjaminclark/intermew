@@ -1,7 +1,9 @@
 /// @description Writes the pie chart to the surface using primitives.
 
 // Pie Chart Data and Colors
-var colors = [c_red, c_green, c_blue, c_yellow, c_aqua, c_green, c_gray, c_black]; // Colors for each segment
+// Colors for each segment
+
+colors = [c_red, c_orange, c_yellow, c_green, c_aqua, c_purple, c_maroon, c_navy, c_white];
 
 // Define center and radius of the pie chart
 var center_x = x;
@@ -45,9 +47,11 @@ for (var i = 0; i < array_length(data); i++) {
     
     // Label for the current segment
     var mid_angle = start_angle + segment_angle / 2;
-    var label_x = center_x + lengthdir_x(radius / 1.5, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
-    var label_y = center_y + lengthdir_y(radius / 1.5, radtodeg(mid_angle));
+    var label_x = center_x + lengthdir_x(radius * 1.3, radtodeg(mid_angle)); // Adjust the factor to position labels closer or further
+    var label_y = center_y + lengthdir_y(radius * 1.3, radtodeg(mid_angle));
     draw_set_color(c_white); // Assuming white text for labels
+	
+	draw_set_font(fntJobSubheading);
     draw_text(label_x, label_y, labels[i]);
     
     // Update start_angle for the next segment
@@ -61,6 +65,6 @@ draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_alpha(current_step / PIE_CHART_TIME)
 //draw_set_font(PIE_CHART_LABEL_FONT);
-draw_text(x, y + upper_radius + PIE_CHART_LABEL_OFFSET, label);
+draw_text(x, y + upper_radius + PIE_CHART_LABEL_OFFSET + 40, "Emotions Portrayed");
 
 draw_set_alpha(1);

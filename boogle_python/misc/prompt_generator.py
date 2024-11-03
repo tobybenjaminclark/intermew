@@ -101,10 +101,12 @@ class PromptGenerator():
         # Generate a review of the user's responses
         review_prompt = (
             "Here are the user's responses during the interview:\n" +
-            "\n" + [l for l in self.log] +
+            "\n" + "".join(["from: " + l["from"] + "\n" + " : " + l["message_data"] + "\n\n" for l in self.log]) +
             "\n\nBased on these responses, provide feedback on what the user could improve."
         )
 
+        print(f"REVIEW_PROMPT: {review_prompt}")
+        
         # Create a feedback response using the OpenAI API
         feedback_response = self.client.chat.completions.create(
             model="gpt-4",

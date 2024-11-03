@@ -10,4 +10,10 @@ function server_stop_listening(){
 	with(oSpeechVisualiser){
 		instance_destroy(self);
 	}
+	
+	// Murder it.
+	with(oServerLink) {
+		new_thread_msg = {from: "speech_recognition_stream", status:"destroy"};
+		send_to_server(new_thread_msg);
+	}
 }
