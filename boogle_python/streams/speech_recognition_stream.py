@@ -2,74 +2,113 @@ import threading
 import json
 import time
 from queue import Queue
-import speech_recognition as sr
+import wave
+import numpy as np
+import sounddevice as sd
+import io
+from openai import OpenAI
+import soundfile as sf
+from moviepy.editor import AudioFileClip
+import os
+import pyaudio
+import wave
+import threading
+from pydub import AudioSegment
 
-
-class SpeechRecognitionStream():
-    stop_event: threading.Event      # Event to signal the termination of the thread.
-    send_queue: Queue             # Queue to transfer data from the subthread to the main thread.
-
+class SpeechRecognitionStream:
     def __init__(self):
         """
         Initialize the stop event and queue.
         """
-
-        # Create an event to signal the subthreads to safely stop execution.
-        self.stop_event: threading.Event = threading.Event()
+        self.stop_event = threading.Event()
         self.send_queue = Queue()
+        self.buffer = ""
+        self.thread = None
+        self.chunk = 1024
+        self.format = pyaudio.paInt16
+        self.channels = 2
+        self.rate = 44100
 
-        self.recognizer = sr.Recognizer()
-        self.exists = False
+        # Create an audio interface
+        self.audio = pyaudio.PyAudio()
+        with open('boogle_python/key.txt', 'r') as file:
+            self.key = file.read().strip()
+
+        self.client = OpenAI(api_key=self.key)
 
     def start_thread(self) -> None:
-        self.create_thread()
+        """Start the speech recognition thread."""
+        if self.thread is None or not self.thread.is_alive():
+            self.create_thread()
 
-    def create_thread(self) -> threading.Thread:
-        self.buffer = ""
-        self.exists = True
-        self.stop_event: threading.Event = threading.Event()
-        self.thread = threading.Thread(
-            target=self.begin_retrieval, args=(self.stop_event,)
-        )
+    def create_thread(self) -> None:
+        """Create and start the recognition thread."""
+        self.thread = threading.Thread(target=self.begin_retrieval)
         self.thread.start()
 
     def stop_thread(self) -> None:
-        self.exists = False
+        """Stop the speech recognition thread."""
         self.stop_event.set()
-        self.thread.join()
+        if self.thread is not None:
+            self.thread.join()
 
-    def send_data(self) -> None:
+    def record_audio(self, duration=5, fs=44100, filename='output.mp4'):
+        """Record audio for a specified duration and sample rate, then save it as an MP4 file."""
+        print("Recording audio...")
+        audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='float64')
+        sd.wait()  # Wait until recording is finished
 
-        print(f"speech recognition sending data")
-        if not self.exists:
-            return
+        # Convert audio data to the appropriate format for saving
+        audio = (audio * 32767).astype(np.int16)  # Convert float to int16
 
-        with sr.Microphone() as source:
-            # Apply noise reduction
-            self.recognizer.adjust_for_ambient_noise(source)
-            try:
-                # Capture and process the audio
-                audio = self.recognizer.listen(source, timeout=0)
-                text = self.recognizer.recognize_google(audio)
-                self.process_text(text)
-            except sr.UnknownValueError:
-                print("Speech not understood")
-            except sr.RequestError:
-                print("Speech recognition service unavailable")
+        # Save the audio as a WAV file first (required for MoviePy)
+        wav_filename = filename.replace('.mp4', '.wav')
+        sf.write(wav_filename, audio, fs)
+
+        # Use MoviePy to create an MP4 file from the WAV file
+        audio_clip = AudioFileClip(wav_filename)
+        audio_clip.write_audiofile(filename, codec='aac')
+
+        # Clean up the temporary WAV file
+        os.remove(wav_filename)
+
+        return filename
+
+    def transcribe_audio(self, audio_path) -> str:
+        """Transcribe audio from a file using OpenAI Whisper."""
+        with open(audio_path, 'rb') as f:  # Open the file in binary mode
+            # Use OpenAI Whisper for transcription
+            response = self.client.audio.transcriptions.create(
+                model="whisper-1",
+                file=f
+            )
+
+            print(response)
+
+            return response.text
+
+
 
     def process_text(self, text: str) -> None:
-        self.buffer += text
-        data = json.dumps({"from": "speech_recognition_stream", "message_data": self.buffer})
+        """Process the recognized text and send it to the queue."""
+        self.buffer += " " + text
+        data = json.dumps({"from": "speech_recognition_stream", "message_data": self.buffer.strip()})
         self.send_queue.put(data)
 
-    def begin_retrieval(self, stop_event) -> None:
-        while not stop_event.is_set():
-            self.send_data()
+    def begin_retrieval(self) -> None:
+        """Continuously retrieve speech data until the stop event is set."""
+        while not self.stop_event.is_set():
+            audio = self.record_audio()
+            text = self.transcribe_audio(audio)
+            if text:
+                self.process_text(text)
             time.sleep(0.1)
 
 
 if __name__ == "__main__":
     speech_stream = SpeechRecognitionStream()
+    api_key = speech_stream.key  # Replace with your OpenAI API key
+    
     speech_stream.start_thread()
 
     # Example loop to get messages from the queue

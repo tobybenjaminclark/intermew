@@ -9,11 +9,12 @@ import time
 
 
 class PromptGenerator():
-    def __init__(self, queue):
+    def __init__(self, queue, parent):
         self.counter = -1
         self.interview_length = 1
         self.queue = queue
         self.tts = TTS(queue)
+        self.parent = parent
 
         
         with open('boogle_python/key.txt', 'r') as file:
@@ -80,7 +81,8 @@ class PromptGenerator():
                 "from": "end_interviewer",
                 "message_data": "Thank you!"
             }
-            self.stream_instances["emotion_stream"]["instance"].get_interview_data()
+            self.parent.stream_instances["emotion_stream"]["instance"].get_interview_data()
+            
 
         thread = threading.Thread(target=self.tts.speak, args=(reply["message_data"],))
         thread.start()

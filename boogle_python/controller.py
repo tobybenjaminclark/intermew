@@ -22,7 +22,7 @@ class Controller:
         self.create_client()
         
 
-        self.prompt_generator_instance = PromptGenerator(self.client_queue)
+        self.prompt_generator_instance = PromptGenerator(self.client_queue, self)
         
     def create_client(self) -> None:
         """Creates a thread which initializes the client."""
