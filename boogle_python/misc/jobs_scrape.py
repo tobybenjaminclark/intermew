@@ -4,10 +4,13 @@ import os
 from jobspy import scrape_jobs
 import csv
 import numpy as np
+from boogle_python.misc.prompt_generator import PromptGenerator
+
 
 
 class JobsScraper():
     def __init__(self):
+        self.prompt_generator = PromptGenerator()
         pass
         
     
@@ -29,7 +32,7 @@ class JobsScraper():
 
         print(jobs)
 
-        output_dir = "./job_software_engineer"
+        output_dir = "game/datafiles"
 
         # TEMP HARDCODING FOR INTERVIEWS
         interviews = [
@@ -56,6 +59,7 @@ class JobsScraper():
 
             title = job["title"]
             description = job["description"]
+            description = self.prompt_generator.shorten_description(description)
             company = job["company"]
             job_url = job["job_url"]
             is_remote = job["is_remote"]

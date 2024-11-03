@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"reset_scores",
   "isCompatibility":false,
   "isDnD":false,

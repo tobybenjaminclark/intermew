@@ -9,7 +9,7 @@ import time
 
 
 class PromptGenerator():
-    def __init__(self, queue, parent):
+    def __init__(self, queue=None, parent=None):
         self.counter = -1
         self.interview_length = 0
         self.queue = queue
@@ -21,6 +21,18 @@ class PromptGenerator():
             key = file.read().strip()
 
         self.client = OpenAI(api_key=key)
+
+    def shorten_description(self, inp:str) -> str:
+        prompt = (
+            f"shorten this description to one sentence: {inp}"
+        )
+
+        response = self.client.chat.completions.create(
+                model="gpt-4",
+                messages=[{"role": "assistant", "content": prompt}]
+            )
+
+        return response.choices[0].message.content
 
     
     def generate_prompt(self, inp: str) -> str:
@@ -141,14 +153,16 @@ class PromptGenerator():
         self.generate_prompt(contents)
         
     def is_leetcode_correct(self, title, question, examples, answer):
-        prompt = f"here is a leetcode question: {title} {question} {examples}. here is the answer: {answer}. reply YES if correct and NO if incorrect. only reply YES or NO"
+        prompt = (f"here is a leetcode question: {title} {question} {examples}. here is the answer in python: {answer}. reply YES if correct and NO if incorrect. only reply YES or NO")
+        context = [{"role": "user", "content": prompt}]
         # Generate the follow-up question
         response = self.client.chat.completions.create(
                 model="gpt-4",
-                messages=prompt
+                messages=context
             )
         
         reply = response.choices[0].message.content
+        print(f"\n\n\n reply: {reply}")
         if "YES" in reply:
             return 1
         else:

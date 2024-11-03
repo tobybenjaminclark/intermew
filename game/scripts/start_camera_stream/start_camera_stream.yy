@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"start_camera_stream",
   "isCompatibility":false,
   "isDnD":false,

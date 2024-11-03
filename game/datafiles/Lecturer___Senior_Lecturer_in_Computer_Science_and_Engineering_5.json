@@ -1,0 +1,24 @@
+{
+    "position": "Lecturer / Senior Lecturer in Computer Science and Engineering",
+    "name": "UNSW",
+    "description": "The School of Computer Science and Engineering in Sydney, Australia, is hiring full-time lecturers or senior lecturers in teaching and research roles for a salary range of AUD $123,620 to $172,261 plus 17% superannuation on various specialities such as Programming languages, Cybersecurity, and Machine Learning, among others.",
+    "url": "https://uk.linkedin.com/jobs/view/lecturer-senior-lecturer-in-computer-science-and-engineering-at-unsw-4010460819?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+    "is_remote": false,
+    "interviews": [
+        {
+            "name": "Preliminary Round",
+            "type": "Technical",
+            "score": 0
+        },
+        {
+            "name": "Personal",
+            "type": "HR",
+            "score": 0
+        },
+        {
+            "name": "Technical Interview",
+            "type": "Managerial",
+            "score": 0
+        }
+    ]
+}
