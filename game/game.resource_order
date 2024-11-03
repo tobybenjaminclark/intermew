@@ -39,6 +39,7 @@
     {"name":"oInterviewNav","order":1,"path":"objects/oInterviewNav/oInterviewNav.yy",},
     {"name":"oInterviewVisualiser","order":21,"path":"objects/oInterviewVisualiser/oInterviewVisualiser.yy",},
     {"name":"oJobHeader","order":3,"path":"objects/oJobHeader/oJobHeader.yy",},
+    {"name":"oLLMFeedback","order":3,"path":"objects/oLLMFeedback/oLLMFeedback.yy",},
     {"name":"oPieChart","order":1,"path":"objects/oPieChart/oPieChart.yy",},
     {"name":"oPositionNav","order":2,"path":"objects/oPositionNav/oPositionNav.yy",},
     {"name":"oPositionSpawner","order":17,"path":"objects/oPositionSpawner/oPositionSpawner.yy",},

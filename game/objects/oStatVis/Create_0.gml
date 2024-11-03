@@ -62,3 +62,8 @@ pie_chart = instance_create_layer(x + 300, y, "Instances", oPieChart, {
         "Sad", 
     ]
 });
+
+fdd = instance_create_layer(room_width div 2,
+	(room_height div 3) * 2,
+	"Instances",
+	oLLMFeedback, {description: global.fdback});

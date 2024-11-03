@@ -60,6 +60,7 @@ if(n_id == server_socket)
 				if variable_struct_exists(jsonData, "aggregate_data") {
 					var msg = jsonData.aggregate_data;
 					global.emotion_stats= jsonData.aggregate_data;
+					global.fdback = jsonData.aggregate_data.feedback;
 					show_debug_message("aggregate data emotion: " + string(msg));
 					spawn_stats(global.interview_path, global.interview_index, "")
 				}

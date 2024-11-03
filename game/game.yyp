@@ -68,6 +68,7 @@
     {"id":{"name":"oInterviewVisualiser","path":"objects/oInterviewVisualiser/oInterviewVisualiser.yy",},},
     {"id":{"name":"oJobHeader","path":"objects/oJobHeader/oJobHeader.yy",},},
     {"id":{"name":"oLineGraph","path":"objects/oLineGraph/oLineGraph.yy",},},
+    {"id":{"name":"oLLMFeedback","path":"objects/oLLMFeedback/oLLMFeedback.yy",},},
     {"id":{"name":"oMonster","path":"objects/oMonster/oMonster.yy",},},
     {"id":{"name":"oPieChart","path":"objects/oPieChart/oPieChart.yy",},},
     {"id":{"name":"oPositionNav","path":"objects/oPositionNav/oPositionNav.yy",},},
