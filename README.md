@@ -112,6 +112,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contributors
 [Amber Swarbrick](https://github.com/aswarbs) - Multithreading, Computer Vision 
+
 [Toby Clark](https://github.com/tobybenjaminclark) - Game & Character Design
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
